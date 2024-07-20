@@ -54,3 +54,62 @@ html{
     border-radius: 10px;
     transition: 0.4s; 
 }
+.btn:hover{
+    background: var(--second-color);
+    color: var(--color-white);
+
+}
+i{
+    font-size: 16px;
+
+}
+
+body{
+    background: var(--body-color);
+
+}
+.container{
+    width:100% ;
+    position: relative;
+}
+nav{
+    background-color: rgb(246, 102, 102);
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+    line-height: 90px;
+    width: 100%;
+    transition: .3s;
+    padding-inline: 9vw;
+    z-index:100;   
+}
+.nav-logo{
+    position: relative;
+
+}
+.nav-name{
+font-size: 30px;
+font-weight: 600;
+color: var(--text-color-third);
+
+
+}
+.nav-logo span{
+    position: absolute; 
+    top: -15px;
+    right: -20px;
+    font-size: 5en;
+    color: var(--text-color-second);
+
+    
+
+}
+.nav-menu .nav_menu_list{
+    display: flex;
+
+}
+.nav-menu .nav_list{
+    list-style: none;
+    position: relative;
+}
