@@ -33,16 +33,20 @@ html{
     width: 10px;
     border-radius: 25px;
 }
+
 ::-webkit-scrollbar-track{
     background: #f1f1f1;
 }
+
 ::-webkit-scrollbar-thumb{
     background: #ccc;
     border-radius: 30px;
 }
+
 ::-webkit-scrollbar-thumb:hover{
     background: #bbb;
 }
+
 
 /* btn design */
 .btn{
@@ -54,26 +58,27 @@ html{
     border-radius: 10px;
     transition: 0.4s; 
 }
+
 .btn:hover{
     background: var(--second-color);
     color: var(--color-white);
-
 }
+
 i{
     font-size: 16px;
-
 }
-
 body{
     background: var(--body-color);
 
 }
+
 .container{
     width:100% ;
     position: relative;
 }
+
 nav{
-    background-color: rgb(246, 102, 102);
+    background-color: var(--body-color);
     position: fixed;
     display: flex;
     justify-content: space-between;
@@ -84,32 +89,109 @@ nav{
     padding-inline: 9vw;
     z-index:100;   
 }
+
 .nav-logo{
     position: relative;
-
 }
+
 .nav-name{
 font-size: 30px;
 font-weight: 600;
 color: var(--text-color-third);
-
-
 }
+
 .nav-logo span{
     position: absolute; 
     top: -15px;
     right: -20px;
-    font-size: 5en;
+    font-size: 5em;
     color: var(--text-color-second);
-
-    
-
 }
+
 .nav-menu .nav_menu_list{
     display: flex;
-
 }
+
 .nav-menu .nav_list{
     list-style: none;
     position: relative;
+}
+.nav-link{
+    text-decoration: none;
+    color: var(text --text-color-second);
+    padding-inline: 15px;
+    font-weight: 500;
+    margin-inline: 20px;
+}
+.nav-menu-btn{
+    display: none;
+}
+.nav-menu-btn i{
+    font-size: 28px;
+    cursor: pointer;
+
+}
+.wrapper{
+    height: 150vh;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 900px){
+    .nav-button{
+        display: none;
+    }
+    .nav-menu.responsive{
+        left:0;
+    }
+    .nav-menu{
+        position: fixed;
+        top: 80px;
+        left:-100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        background: #d2c9c9c2;
+        backdrop-filter: blur(20px);
+        width: 100%;
+        min-height: 450px;
+        height: 90vh;
+        transition: .3s;
+    }
+    .nav_menu_list{
+        flex-direction: column;
+    }
+    .nav-menu-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
 }
