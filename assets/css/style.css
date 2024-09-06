@@ -211,6 +211,44 @@ color: var(--text-color-third);
 .icon:hover{
     color: var(--first-color);
 }
+.featured-image{
+    display: flex;
+    justify-content: right;
+    align-content: center;
+    min-height: 80vh;
+    width: 50%;
+}
+.image{
+   
+    margin: auto 0;
+    width: 380px;
+    height: 380px;
+    border-radius: 55% 45% 55% 45%;
+    overflow: hidden;
+    animation: imgFloat 7s ease-in-out infinite;
+}
+.image img{
+    width:380px;
+    height: 380px;
+    object-fit: cover;
+}
+
+.scroll-btn{
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    translate: -50%;
+    display: flex;
+    justify-content: center;
+}
+
+
+@keyframes imgFloat{
+50%{
+    transform: translateY(10px);
+    border-radius:45% 55% 45% 55%;
+}
+}
 
 
 
