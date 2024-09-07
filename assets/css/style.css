@@ -129,8 +129,25 @@ color: var(--text-color-third);
 .nav-menu-btn i{
     font-size: 28px;
     cursor: pointer;
-
 }
+.active-link{
+    position: relative;
+    color: var(--first-color);
+    transition: .3;
+}
+.active-link::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translate(-50%, -50%);
+    width: 5px;
+    height: 5px;
+    background: var(--first-color);
+    border-radius: 50%;
+}
+
+
 .wrapper{
    padding-inline: 10vw;
      
@@ -476,7 +493,7 @@ border: radius 20px; ;
     rotate:-45deg;
  }
 
-.footer{
+footer{
     display:flex;
     justify-content: center;
     align-items: center;
