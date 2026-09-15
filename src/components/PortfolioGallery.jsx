@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { ExternalLink, Layers, Eye, Sparkles, Filter, X } from 'lucide-react';
+import { ExternalLink, Layers, Eye, X } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 
 export default function PortfolioGallery() {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -115,25 +118,14 @@ export default function PortfolioGallery() {
           }}
         >
           {filters.map((filter) => (
-            <button
+            <Badge
               key={filter}
+              variant={activeFilter === filter ? "active" : "default"}
               onClick={() => setActiveFilter(filter)}
-              style={{
-                border: 'none',
-                padding: '0.6rem 1.25rem',
-                borderRadius: '9999px',
-                fontSize: '0.825rem',
-                fontWeight: activeFilter === filter ? 600 : 500,
-                background: activeFilter === filter ? 'var(--brand-plum)' : 'rgba(255, 255, 255, 0.8)',
-                color: activeFilter === filter ? '#ffffff' : 'var(--text-secondary)',
-                cursor: 'pointer',
-                boxShadow: activeFilter === filter ? '0 4px 14px rgba(66, 35, 50, 0.2)' : 'var(--shadow-studio-soft)',
-                border: '1px solid var(--border-subtle)',
-                transition: 'all 0.25s ease',
-              }}
+              className="cursor-pointer px-5 py-2 text.xs tracking-[0.1em]"
             >
               {filter}
-            </button>
+            </Badge>
           ))}
         </div>
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, ArrowUpRight, Box } from 'lucide-react';
+import { ArrowUpRight, Box } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -98,9 +99,11 @@ export default function Navbar() {
               <span>Available for Select Projects</span>
             </div>
 
-            <a href="#contact" className="btn-primary" style={{ padding: '0.6rem 1.25rem', fontSize: '0.8rem' }}>
-              <span>Collaborate</span>
-              <ArrowUpRight size={14} />
+            <a href="#contact">
+              <Button size="sm">
+                <span>Collaborate</span>
+                <ArrowUpRight size={14} />
+              </Button>
             </a>
           </div>
         </nav>

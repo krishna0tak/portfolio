@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { Sparkles, ShieldCheck, Droplets, Feather, Sun, Layers, Eye, CheckCircle2 } from 'lucide-react';
+import { Droplets, Feather, Sun, CheckCircle2 } from 'lucide-react';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 
 export default function ProductSpotlight() {
   const [activeTab, setActiveTab] = useState('benefits'); // 'benefits', 'actives', 'packaging'
@@ -135,41 +138,12 @@ export default function ProductSpotlight() {
 
           {/* Right Column: Interactive Tabs & Content */}
           <div>
-            {/* Tab Controls */}
-            <div 
-              style={{ 
-                display: 'inline-flex', 
-                background: 'rgba(0,0,0,0.04)', 
-                padding: '4px', 
-                borderRadius: '9999px',
-                marginBottom: '2rem' 
-              }}
-            >
-              {[
-                { id: 'benefits', label: '3 Core Benefits' },
-                { id: 'actives', label: 'Key Actives' },
-                { id: 'packaging', label: 'Packaging Dieline' },
-              ].map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  style={{
-                    border: 'none',
-                    padding: '0.6rem 1.25rem',
-                    borderRadius: '9999px',
-                    fontSize: '0.825rem',
-                    fontWeight: activeTab === tab.id ? 600 : 500,
-                    background: activeTab === tab.id ? '#ffffff' : 'transparent',
-                    color: activeTab === tab.id ? 'var(--brand-plum)' : 'var(--text-secondary)',
-                    cursor: 'pointer',
-                    boxShadow: activeTab === tab.id ? '0 2px 8px rgba(0,0,0,0.08)' : 'none',
-                    transition: 'all 0.25s ease',
-                  }}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
+            <Tabs defaultValue="benefits" className="mb-6">
+              <TabsList className="mb-6">
+                <TabsTrigger value="benefits">3 Core Benefits</TabsTrigger>
+                <TabsTrigger value="actives">Key Actives</TabsTrigger>
+                <TabsTrigger value="packaging">Packaging Dieline</TabsTrigger>
+              </TabsList>
 
             {/* TAB 1: 3 CORE BENEFITS */}
             {activeTab === 'benefits' && (
@@ -296,6 +270,7 @@ export default function ProductSpotlight() {
                 </div>
               </div>
             )}
+            </Tabs>
           </div>
         </div>
       </div>

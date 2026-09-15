@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   /* Atelier Visual Archive / Editorial 3D Packaging Design Tokens */
   --canvas-base: #F7F6F3;
