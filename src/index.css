@@ -1,0 +1,102 @@
+:root {
+  /* Atelier Visual Archive / Editorial 3D Packaging Design Tokens */
+  --canvas-base: #F7F6F3;
+  --canvas-subtle: #EFECE6;
+  --border-hairline: #E2DFD7;
+  --charcoal-body: #202020;
+  --stone-gray: #77736F;
+  --charcoal-muted: #57534E;
+  --plum-accent: #4A152E;
+  --plum-deep: #3B1224;
+
+  --text-primary: var(--charcoal-body);
+  --text-secondary: var(--stone-gray);
+  --text-tertiary: var(--charcoal-muted);
+  --brand-plum: var(--plum-accent);
+  --brand-plum-dark: var(--plum-deep);
+  --brand-plum-glow: rgba(74, 21, 46, 0.15);
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Inter', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--bg-studio-mid);
+  background: radial-gradient(ellipse at 50% 45%, var(--bg-studio-center) 0%, var(--bg-studio-mid) 60%, var(--bg-studio-edge) 100%);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(66, 35, 50, 0.35);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-plum);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Studio Glass Panels */
+.studio-glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+/* Pulse animation */
+@keyframes studioPulse {
+  0%, 100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.15);
+  }
+}
+
+.studio-pulse {
+  animation: studioPulse 2s infinite ease-in-out;
+}
+
+/* Scroll indicator bounce */
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.scroll-bounce {
+  animation: scrollBounce 2s infinite ease-in-out;
+}
