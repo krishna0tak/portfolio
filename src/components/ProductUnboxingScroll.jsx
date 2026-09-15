@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import VantaBackground from './VantaBackground';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -201,6 +202,9 @@ export default function ProductUnboxingScroll() {
         </div>
       )}
 
+      {/* Ambient 3D Fog Vanta Backdrop */}
+      <VantaBackground />
+
       {/* Pinned Viewport - Pure Canvas Animation Only */}
       <div
         style={{
@@ -211,6 +215,7 @@ export default function ProductUnboxingScroll() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          zIndex: 1,
         }}
       >
         <canvas
