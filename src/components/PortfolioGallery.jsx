@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { ExternalLink, Layers, Eye, X } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
+import { useScrollAnimations } from '@/hooks/useScrollAnimations';
 
 export default function PortfolioGallery() {
+  const sectionRef = useRef(null);
+  useScrollAnimations(sectionRef);
+
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -96,10 +100,10 @@ export default function PortfolioGallery() {
     : projects.filter(p => p.category === activeFilter);
 
   return (
-    <section id="works" style={{ padding: '8rem 0', position: 'relative' }}>
+    <section ref={sectionRef} id="works" style={{ padding: '8rem 0', position: 'relative' }}>
       <div className="studio-container">
         {/* Header */}
-        <div className="section-title-wrap">
+        <div className="section-title-wrap animate-heading">
           <span className="section-eyebrow">Portfolio Index</span>
           <h2 className="section-heading">Selected Works & Renders</h2>
           <p className="section-subtext">
