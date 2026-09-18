@@ -1,46 +1,99 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  /* Atelier Visual Archive / Editorial 3D Packaging Design Tokens */
-  --canvas-base: #F7F6F3;
-  --canvas-subtle: #EFECE6;
-  --border-hairline: #E2DFD7;
-  --charcoal-body: #202020;
-  --stone-gray: #77736F;
-  --charcoal-muted: #57534E;
-  --plum-accent: #4A152E;
-  --plum-deep: #3B1224;
+@layer base {
+  :root {
+    --color-offWhite: #f2f2f4;
+    --color-offBlack: #0f1012;
+    --color-blue: #0071e3;
+    --color-orange: #ff5102;
+    --color-green: #00b982;
+    --color-yellow: #fca311;
+    --color-greyLight: #efefef;
+    --color-greyLighter: #f8f8f8;
+    --color-white: #ffffff;
+    --font-base: 'Inter Tight', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
 
-  --text-primary: var(--charcoal-body);
-  --text-secondary: var(--stone-gray);
-  --text-tertiary: var(--charcoal-muted);
-  --brand-plum: var(--plum-accent);
-  --brand-plum-dark: var(--plum-deep);
-  --brand-plum-glow: rgba(74, 21, 46, 0.15);
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
 
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'Inter', monospace;
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-base);
+    background-color: var(--color-offWhite);
+    color: var(--color-offBlack);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.02em;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--color-offWhite);
+    color: var(--color-offBlack);
+    overflow-x: hidden;
+  }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Augen Pill Buttons & Badges */
+.augen-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
-html, body {
-  width: 100%;
-  min-height: 100%;
-  background-color: var(--bg-studio-mid);
-  background: radial-gradient(ellipse at 50% 45%, var(--bg-studio-center) 0%, var(--bg-studio-mid) 60%, var(--bg-studio-edge) 100%);
-  color: var(--text-primary);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+.augen-pill-outline {
+  border: 1px solid rgba(15, 16, 18, 0.15);
+  background: transparent;
+  color: var(--color-offBlack);
+}
+
+.augen-pill-outline:hover {
+  background: rgba(15, 16, 18, 0.05);
+  border-color: rgba(15, 16, 18, 0.3);
+}
+
+.augen-pill-blue {
+  background: var(--color-blue);
+  color: #ffffff;
+}
+
+.augen-pill-blue:hover {
+  background: #0060c4;
+}
+
+/* Glassmorphism Navigation */
+.augen-glass-header {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(15, 16, 18, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
+}
+
+/* Augen Card Utilities */
+.augen-card {
+  background: #ffffff;
+  border: 1px solid rgba(15, 16, 18, 0.08);
+  border-radius: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.augen-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 113, 227, 0.3);
 }
 
 /* Custom Minimal Scrollbar */
@@ -48,59 +101,14 @@ html, body {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--color-offWhite);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(66, 35, 50, 0.35);
+  background: #d1d5db;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--brand-plum);
+  background: var(--color-blue);
 }
 
-.font-serif {
-  font-family: var(--font-serif);
-}
 
-.font-mono {
-  font-family: var(--font-mono);
-}
-
-/* Studio Glass Panels */
-.studio-glass {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
-}
-
-/* Pulse animation */
-@keyframes studioPulse {
-  0%, 100% {
-    opacity: 0.9;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.4;
-    transform: scale(1.15);
-  }
-}
-
-.studio-pulse {
-  animation: studioPulse 2s infinite ease-in-out;
-}
-
-/* Scroll indicator bounce */
-@keyframes scrollBounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(6px);
-  }
-}
-
-.scroll-bounce {
-  animation: scrollBounce 2s infinite ease-in-out;
-}

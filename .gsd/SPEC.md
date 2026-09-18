@@ -1,35 +1,38 @@
-# SPEC.md — Project Specification
+# SPEC.md — Augen.pro Inspired Rebuild Specification
 
 > **Status**: `FINALIZED`
 >
 > ⚠️ **Planning Lock**: `FINALIZED` — Ready for GSD planning and execution.
 
 ## Vision
-An elite haute-couture 3D packaging and spatial visualization studio web application (**Bonocartan × Caméola — Atelier Visual Archive**). It pairs Swiss typographic precision with tactile 3D renders, 300-frame interactive unboxing scroll scrubbing, ambient canvas lighting, and museum-grade editorial minimalism.
+A modern, ultra-clean web application inspired by **[augen.pro](https://augen.pro/)**. It combines Swiss grotesque typography ("PP Neue Montreal" / Inter Tight), off-white substrate tones (`#f2f2f4`, `#fdfdfd`), floating blurred pill navigation, bento-box showcase grids, minimal pill badges, and places our **300-frame `foamer` scroll canvas animation** directly into the main hero showcase stage.
 
-## Goals
-1. **3D Unboxing Engine** — Smooth 300-frame 1080p canvas scroll-scrubbing with GSAP ScrollTrigger and high-DPI scaling.
-2. **Ambient Vanta.js 3D Background** — Lightweight Three.js fog/halo background canvas matching `#F7F6F3` / `#EFECE6` substrate tones.
-3. **Minimalist UI Component System** — Editorial components (Navbar, Project Cards, Material Swatch Drawer, Contact Dossier) conforming strictly to `DESIGN.md` (0px sharp corners, `#E2DFD7` hairline rules, `#202020` charcoal ink, `#4A152E` cosmetic plum).
-4. **Interactive Material Inspector & Gallery** — Filterable project showcase with 3-part Swiss ledgers, material taxonomy tags, and project dossier overlays.
-
-## Non-Goals (Out of Scope)
-- E-commerce checkout or shopping cart processing.
-- Backend user authentication or database storage (all state is client-side / static portfolio data).
-- Heavy skeuomorphic drop shadows, rounded badges, or frosted glassmorphism cards.
+## Core Features & Design System
+1. **Augen.pro Design Tokens & Typography**:
+   - Backgrounds: Off-white (`#f2f2f4`, `#fdfdfd`), soft grey (`#efefef`), off-black (`#0f1012`), and pure white (`#ffffff`).
+   - Accents: Electric Blue (`#0071e3`), Vibrant Orange (`#ff5102`), Emerald (`#00b982`), and Yellow (`#fca311`).
+   - Typography: Clean grotesque headers & body with tight tracking (`-0.02em`) and subtle opacity hierarchy (`opacity: 0.5` on section labels).
+2. **Hero Stage with Foamer Scroll Canvas**:
+   - Hero header with headline ("Invisible Computing that works effortlessly for you"), category pills, CTA arrow buttons, and the **`foamer` 299-frame canvas scroll scrubbing stage** embedded right where `augen.pro` places their hero showcase asset.
+3. **Floating Blurred Navigation Pill**:
+   - Header with rounded pill logo, nav links (`Overview`, `Experience`, `Showcase`, `Specs`), and hover opacity fades.
+4. **Bento-Box Feature & Product Grid**:
+   - Rounded cards (`border-radius: 1.5rem`), category pills, subtitle labels, and subtle hover interactions.
+5. **Minimalist Footer**:
+   - Clean footer matching `augen.pro` layout with status pill, nav links, and back-to-top action.
 
 ## Constraints
-- **Design System**: Strict adherence to `DESIGN.md` tokens and guidelines.
-- **Framework**: Vite + React 19 + GSAP + Three.js / Vanta.js + Lucide React.
-- **Performance**: High frame rate scrolling and low latency image sequence rendering.
+- **Framework**: React + Vite + Tailwind CSS + Canvas Scroll Scrubbing.
+- **Performance**: High 60fps scroll scrubbing performance with zero layout jitter.
 
 ## Success Criteria
-- [x] Extracted design system from Stitch MCP and committed to `DESIGN.md`.
-- [ ] Vanta.js ambient 3D backdrop active with `#F7F6F3` substrate styling.
-- [ ] 0px sharp architectural UI components matching `DESIGN.md`.
-- [ ] All interactive sections (Unboxing, Product Spotlight, Portfolio Gallery, About, Contact) operational and responsive.
-- [ ] Clean production build via `npm run build` with zero errors.
+- [ ] Implement `augen.pro` styling tokens, typography, and utility classes in `index.css`.
+- [ ] Build floating blurred pill `Navbar` matching `augen.pro`.
+- [ ] Build `HeroSection` incorporating headline, category pills, CTA, and embedded `foamer` canvas scroll stage.
+- [ ] Build `FeatureGrid` & `ShowcaseSection` following `augen.pro` card & list patterns.
+- [ ] Build `Footer` matching `augen.pro`.
+- [ ] Production build (`npm run build`) passes with 0 errors.
 
 ---
 
-*Last updated: 2026-09-16*
+*Last updated: 2026-09-18*

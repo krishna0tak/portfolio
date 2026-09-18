@@ -1,52 +1,47 @@
 ---
-milestone: Atelier Visual Archive v1.0
-version: 1.0.0
-updated: 2026-09-16T04:49:00+05:30
+milestone: Augen.pro Minimal Redesign v2.0
+version: 2.0.0
+updated: 2026-09-18T18:24:00+05:30
 ---
 
 # Roadmap
 
-> **Current Phase:** 1 - Vanta.js Ambient Background Integration
+> **Current Phase:** 4 - Augen.pro Core Aesthetics & Foamer Hero Stage
 > **Status:** planning
 
 ## Must-Haves (from SPEC)
 
-- [ ] Ambient Vanta.js 3D background canvas matching `#F7F6F3` / `#EFECE6` substrates
-- [ ] 0px sharp architectural UI components conforming strictly to `DESIGN.md`
-- [ ] GSAP scrubbable 3D unboxing canvas and micro-interactions
-- [ ] Responsive 12-column Swiss modular grid across Desktop, Tablet, and Mobile
+- [ ] Augen.pro color palette (`#f2f2f4` off-white, `#0f1012` off-black, `#0071e3` blue, `#ff5102` orange)
+- [ ] Floating blurred pill navigation bar with logo mark and hover transitions
+- [ ] Hero section featuring `augen.pro` typography, category pills, CTA, and embedded `foamer` 299-frame canvas scroll stage
+- [ ] Bento-box feature grid and minimal list rows matching `augen.pro` component flow
+- [ ] Minimal footer with status indicator and back-to-top button
 
 ---
 
 ## Phases
 
-### Phase 1: Vanta.js Ambient Background Integration
-**Status:** ✅ Complete
-**Objective:** Integrate Three.js powered Vanta.js ambient canvas backdrop behind the unboxing viewport matching `#F7F6F3` (Canvas Base) and `#EFECE6` (Canvas Subtle) substrate tones.
-**Requirements:** REQ-01 (Vanta.js ambient lighting backdrop)
-
+### Phase 4: Augen.pro Design System & Floating Navigation
+**Status:** ⏳ In Progress
+**Objective:** Establish `augen.pro` typography, color tokens (`#f2f2f4`, `#0f1012`, `#0071e3`), rounded pill styling, and build the floating backdrop-blur `Navbar`.
 **Plans:**
-- [x] Plan 1.1: Install Vanta.js & create VantaBackground component
+- [ ] Plan 4.1: Establish `augen.pro` design tokens in `index.css` and build floating `Navbar` component.
 
 ---
 
-### Phase 2: Editorial UI Polish & Component Refinement
-**Status:** ✅ Complete
-**Objective:** Refine Navbar, Portfolio Gallery cards, Filter Chips, Material Swatch Drawer, and Contact Dossier with sharp 0px corners, `#E2DFD7` hairlines, `#202020` charcoal ink, and `#4A152E` cosmetic plum accents.
-**Depends on:** Phase 1
-
+### Phase 5: Hero Showcase with Embedded Foamer Canvas Scroll Stage
+**Status:** ⏳ Pending
+**Objective:** Build `HeroSection` following `augen.pro` layout (header text, category pills, CTA link) with the 299-frame `foamer` canvas scroll animation embedded directly into the hero showcase stage.
 **Plans:**
-- [x] Plan 2.1: Install Tailwind CSS & create shadcn UI primitives
+- [ ] Plan 5.1: Build `HeroSection` with embedded `foamer` canvas scroll scrubbing stage.
 
 ---
 
-### Phase 3: GSAP Micro-Animations & Final Verification
-**Status:** ✅ Complete
-**Objective:** Implement staggered line reveals for `1px` grid dividers, smooth scroll parallax, button hover transitions, and perform complete production build audit.
-**Depends on:** Phase 2
-
+### Phase 6: Augen.pro Feature Grid & Minimal Footer
+**Status:** ⏳ Pending
+**Objective:** Implement bento-box feature grid, product list cards, and minimalist footer matching `augen.pro` component flow.
 **Plans:**
-- [x] Plan 3.1: GSAP motion orchestration & empirical verification audit
+- [ ] Plan 6.1: Build `FeatureGrid` and `Footer` components, assemble in `App.jsx`, and run build verification.
 
 ---
 
@@ -54,9 +49,9 @@ updated: 2026-09-16T04:49:00+05:30
 
 | Phase | Status | Plans | Complete |
 |-------|--------|-------|----------|
-| 1 | ✅ | 1/1 | 100% |
-| 2 | ✅ | 1/1 | 100% |
-| 3 | ✅ | 1/1 | 100% |
+| 4 | ⏳ | 0/1 | 0% |
+| 5 | ⏳ | 0/1 | 0% |
+| 6 | ⏳ | 0/1 | 0% |
 
 ---
 
@@ -64,6 +59,6 @@ updated: 2026-09-16T04:49:00+05:30
 
 | Phase | Started | Completed | Duration |
 |-------|---------|-----------|----------|
-| 1 | 2026-09-16 | — | — |
-| 2 | — | — | — |
-| 3 | — | — | — |
+| 4 | 2026-09-18 | — | — |
+| 5 | — | — | — |
+| 6 | — | — | — |
