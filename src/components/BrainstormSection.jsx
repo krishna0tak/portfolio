@@ -1,80 +1,69 @@
 import React, { useState } from 'react';
-import { Layers, Lightbulb, Compass, FileCheck, CheckCircle2, ChevronRight, Eye, Maximize2 } from 'lucide-react';
+import { Eye, Maximize2, Sparkles, BookOpen, Layers, CheckCircle2 } from 'lucide-react';
 
-const IDEATION_PHASES = [
+import page1 from '../assets/ideation_extracted/page_1.png';
+import page2 from '../assets/ideation_extracted/page_2.png';
+import page3 from '../assets/ideation_extracted/page_3.png';
+import page4 from '../assets/ideation_extracted/page_4.png';
+import page5 from '../assets/ideation_extracted/page_5.png';
+
+const IDEATION_SLIDES = [
   {
-    id: 'phase1',
-    number: 'PHASE 01',
-    title: 'Ergonomic Grip & Actuation Study',
-    subtitle: 'Solving wet-hand stability and actuation torque',
-    description:
-      'Standard foamer bottles suffer from instability when operated with wet, soapy hands. We engineered an asymmetrical shoulder tapering and a textured neck collar that lowers actuation effort by 28%.',
-    highlights: [
-      'Tested 42 physical 3D prints across 85 study participants',
-      'Lowered actuation force to 14.2 N (vs 19.8 N industry average)',
-      'Integrated thumb recess on back contour for one-handed pump control',
-    ],
-    metrics: { key: 'Actuation Force', val: '14.2 N', delta: '-28% Effort' },
+    id: 1,
+    title: 'Brand Identity Keywords & Core Pillars',
+    subtitle: 'Keyword Mapping & Aesthetic Direction',
+    src: page1,
+    desc: 'Core brand values establishing French luxury heritage, Baby Sky & Soft Pink color system, italic typography, and gender-neutral clean beauty positioning.',
+    highlights: ['France / Paris Brand Origin', 'Baby Sky & Pink Palette', 'Camellia Elegance Motif', 'Gender-Neutral Architecture'],
   },
   {
-    id: 'phase2',
-    number: 'PHASE 02',
-    title: 'Structural Dieline & Box Architecture',
-    subtitle: 'Zero-glue protective packaging layout',
-    description:
-      'The outer carton packaging was designed using an interlocking dieline architecture that eliminates industrial adhesives. The interior sleeve secures the bottle cap firmly during shipping.',
-    highlights: [
-      '100% FSC-certified unbleached virgin paperboard substrate',
-      'Custom spot UV and blind debossing print specifications',
-      'Engineered top flap locking tab prevents transit opening',
-    ],
-    metrics: { key: 'Adhesive Usage', val: '0.0g', delta: '100% Glue Free' },
+    id: 2,
+    title: 'Brandmark & Logotype Typography',
+    subtitle: 'CAMEÓLA Paris Wordmark Iterations',
+    src: page2,
+    desc: 'Custom serif and italic font pairing exploring accent marks (CAMEÓLA) and timeless French haute-cosmétique proportions.',
+    highlights: ['Custom Serif & Accent Design', 'High-Contrast Diacritics', 'Minimalist Alignment Grid'],
   },
   {
-    id: 'phase3',
-    number: 'PHASE 03',
-    title: 'Zero-Propellant Aeration Engine',
-    subtitle: '1:12 Air-to-liquid pneumatic micro-mesh',
-    description:
-      'Instead of aerosol gas propellants, the internal mesh chamber draws ambient air through a 150-micron dual mesh screen upon spring release, producing instant velvet foam density.',
-    highlights: [
-      '150-micron surgical-grade stainless mesh disk',
-      'Dual check-valve seals prevent liquid backflow into air chamber',
-      'Standard 43/410 thread pairing for universal automated filling lines',
-    ],
-    metrics: { key: 'Foam Density', val: '0.12 g/cm³', delta: 'Ultra Velvet' },
+    id: 3,
+    title: 'Visual Moodboard & Form Exploration',
+    subtitle: 'Sculptural & Architectural Inspiration',
+    src: page3,
+    desc: 'Sketches, material swatches, and organic curvature research balancing tactile softness with architectural precision.',
+    highlights: ['Organic Camellia Petal Curves', 'Ergonomic Plunger Contours', 'Monochromatic Contrast'],
+  },
+  {
+    id: 4,
+    title: 'Color Theory & Material Substrates',
+    subtitle: 'Baby Sky, Soft Pink & Deep Plum Harmonization',
+    src: page4,
+    desc: 'Formulating pigment ratios for soft-touch PETG resin, FSC paperboard box stock, and metallic rose-gold foil accents.',
+    highlights: ['Baby Sky & Soft Pink Tones', 'FSC Cardstock Compatibility', 'UV Varnish & Hot Foil Specs'],
+  },
+  {
+    id: 5,
+    title: 'Design Philosophy & Brand Manifesto',
+    subtitle: 'Beauty That Speaks Without Scent',
+    src: page5,
+    desc: 'Core formulation ethos: "Cameola is not about fragrances or synthetic flavours — just healthy, timeless beauty that speaks for itself."',
+    highlights: ['Pure Unscented Formulation', 'Natural Skin Health Focus', 'Subtle Nod to Timeless Elegance'],
   },
 ];
 
-const ITERATIONS = [
-  {
-    version: 'V1 Concept',
-    tag: 'Initial Prototype',
-    desc: 'Cylindrical base with standard flat pump head. Prone to sliding off countertops when wet.',
-    status: 'DISCARDED',
-  },
-  {
-    version: 'V2 Refinement',
-    tag: 'Ergonomic Collar',
-    desc: 'Introduced tapered waist neck and enlarged plunger surface for palm pressing.',
-    status: 'TESTED',
-  },
-  {
-    version: 'V3 Final Spec',
-    tag: 'Production Dieline',
-    desc: 'Integrated monomaterial PETG core, foil-stamped dieline box, and anti-slip collar.',
-    status: 'APPROVED',
-  },
+const KEYWORDS = [
+  'PREMIUM', 'SKIN CARE', 'PARIS / FRANCE', 'BABY SKY & PINK',
+  'ITALIC FONTS', 'ELEGANCE', 'FLAWLESS', 'GENDER NEUTRAL',
+  'CAMELLIA MOTIF', 'LUXURY', 'GENTLE PURITY', 'ZERO SYNTHETIC FRAGRANCE'
 ];
 
 export default function BrainstormSection() {
-  const [activeTab, setActiveTab] = useState('phase1');
-  const [showDielineModal, setShowDielineModal] = useState(false);
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [lightboxImage, setLightboxImage] = useState(null);
 
-  const activePhase = IDEATION_PHASES.find((p) => p.id === activeTab);
+  const activeSlide = IDEATION_SLIDES[activeSlideIndex];
 
   return (
-    <section id="brainstorm" className="py-24 bg-[#F7F6F3] border-b border-[#E2DFD7]">
+    <section id="theory" className="py-24 bg-[#F7F6F3] border-b border-[#E2DFD7] scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-[#E2DFD7]">
@@ -82,195 +71,148 @@ export default function BrainstormSection() {
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2.5 h-2.5 bg-[#4A152E]" />
               <span className="font-mono text-xs text-[#4A152E] uppercase tracking-widest font-semibold">
-                02. IDEATION & PROCESS
+                03. IDEATION THEORY & BRAND PHILOSOPHY
               </span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl text-stone-950 font-normal tracking-tight">
-              Behind the Design: <br />
-              <span className="italic font-serif text-[#4A152E]">42 Iterations</span> to Perfection.
+              Design Philosophy: <br />
+              <span className="italic font-serif text-[#4A152E]">Beauty That Speaks Without Scent</span>.
             </h2>
           </div>
           <p className="text-stone-600 font-sans text-sm md:text-base max-w-md leading-relaxed font-light">
-            Every millimeter of the CAMEOLA foamer was prototyped, stress-tested, and refined to reconcile luxury cosmetic aesthetics with circular manufacturing principles.
+            Extracted directly from the designer's 5-page ideation story deck. CAMEÓLA Paris rejects artificial perfumes in favor of healthy, timeless skin purity.
           </p>
         </div>
 
-        {/* Brainstorm Tabs Selector */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-          {IDEATION_PHASES.map((phase) => {
-            const isSelected = activeTab === phase.id;
-            return (
-              <button
-                key={phase.id}
-                onClick={() => setActiveTab(phase.id)}
-                className={`p-6 text-left transition-all duration-200 border cursor-pointer ${
-                  isSelected
-                    ? 'bg-[#4A152E] text-white border-[#4A152E] shadow-md'
-                    : 'bg-white text-stone-900 border-[#E2DFD7] hover:border-[#4A152E]/40'
-                }`}
+        {/* Brand Keywords Pill Cloud */}
+        <div className="mb-14 p-6 bg-white border border-[#E2DFD7] shadow-xs">
+          <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#E2DFD7]">
+            <span className="font-mono text-xs text-[#4A152E] uppercase tracking-widest font-semibold flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-[#4A152E]" />
+              FOUNDATIONAL DESIGN KEYWORDS & PILLARS
+            </span>
+            <span className="font-mono text-[11px] text-stone-400">IDEATION STORY DECK // PAGE 01</span>
+          </div>
+          <div className="flex flex-wrap gap-2.5">
+            {KEYWORDS.map((kw, i) => (
+              <span
+                key={i}
+                className="px-3.5 py-1.5 bg-[#EFECE6] border border-[#E2DFD7] font-mono text-xs text-stone-800 uppercase tracking-wider hover:bg-[#4A152E] hover:text-white transition-colors"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <span
-                    className={`font-mono text-xs tracking-widest ${
-                      isSelected ? 'text-pink-200' : 'text-[#4A152E]'
-                    }`}
-                  >
-                    {phase.number}
-                  </span>
-                  {isSelected && <CheckCircle2 className="w-4 h-4 text-pink-200" />}
-                </div>
-                <h3 className="font-serif text-lg font-medium mb-1 leading-snug">
-                  {phase.title}
-                </h3>
-                <p
-                  className={`text-xs font-sans line-clamp-2 ${
-                    isSelected ? 'text-stone-200' : 'text-stone-500'
-                  }`}
-                >
-                  {phase.subtitle}
-                </p>
-              </button>
-            );
-          })}
+                {kw}
+              </span>
+            ))}
+          </div>
         </div>
 
-        {/* Active Phase Deep Dive Card */}
-        {activePhase && (
-          <div className="bg-white border border-[#E2DFD7] p-8 md:p-12 mb-16 shadow-xs">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-7 space-y-6">
-                <div className="inline-block px-3 py-1 bg-[#EFECE6] border border-[#E2DFD7] font-mono text-xs text-[#4A152E]">
-                  {activePhase.number} // {activePhase.subtitle}
-                </div>
-                <h3 className="font-serif text-3xl md:text-4xl text-stone-950 font-normal">
-                  {activePhase.title}
-                </h3>
-                <p className="text-stone-600 text-sm md:text-base leading-relaxed font-light">
-                  {activePhase.description}
-                </p>
-
-                <div className="space-y-3 pt-4 border-t border-[#E2DFD7]">
-                  <h4 className="font-mono text-xs uppercase tracking-wider text-stone-900 font-semibold">
-                    Key Technical Breakthroughs
-                  </h4>
-                  {activePhase.highlights.map((h, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <ChevronRight className="w-4 h-4 text-[#4A152E] mt-0.5 shrink-0" />
-                      <span className="text-xs md:text-sm text-stone-700 font-sans">{h}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right Side Metric Showcase */}
-              <div className="lg:col-span-5 bg-[#EFECE6] p-8 border border-[#E2DFD7] flex flex-col justify-between h-full space-y-8">
-                <div>
-                  <span className="font-mono text-xs text-stone-500 uppercase tracking-widest">
-                    BENCHMARK MEASUREMENT
-                  </span>
-                  <div className="font-serif text-5xl text-[#4A152E] font-normal my-2">
-                    {activePhase.metrics.val}
-                  </div>
-                  <span className="inline-block px-2.5 py-1 bg-[#4A152E] text-white text-xs font-mono">
-                    {activePhase.metrics.delta}
-                  </span>
-                </div>
-
-                <div className="pt-6 border-t border-[#E2DFD7] space-y-2">
-                  <div className="flex justify-between text-xs font-mono text-stone-600">
-                    <span>Ergonomic Pass Rate</span>
-                    <span className="font-semibold text-stone-950">98.4%</span>
-                  </div>
-                  <div className="w-full h-1.5 bg-[#E2DFD7] rounded-full overflow-hidden">
-                    <div className="h-full bg-[#4A152E] w-[98.4%]" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Structural Dieline Blueprint Showcase (using cameola-dieline.png) */}
-        <div className="bg-[#202020] text-[#F7F6F3] p-8 md:p-12 mb-16 border border-stone-800">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
-            <div>
-              <span className="font-mono text-xs text-pink-400 uppercase tracking-widest font-semibold">
-                ARCHITECTURAL BLUEPRINT // DIELINE SPECIFICATION
-              </span>
-              <h3 className="font-serif text-2xl md:text-3xl font-normal text-white mt-1">
-                Precision Packaging Dieline Layout
+        {/* 5-Page Ideation Story Deck Showcase */}
+        <div className="bg-white border border-[#E2DFD7] shadow-xs p-6 md:p-10 mb-16">
+          <div className="flex items-center justify-between pb-6 border-b border-[#E2DFD7] mb-8">
+            <div className="flex items-center gap-3">
+              <BookOpen className="w-5 h-5 text-[#4A152E]" />
+              <h3 className="font-serif text-2xl text-stone-950 font-normal">
+                5-Page Ideation Story Deck
               </h3>
             </div>
-            <button
-              onClick={() => setShowDielineModal(true)}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#4A152E] hover:bg-pink-900 text-white text-xs font-mono uppercase tracking-wider transition-colors cursor-pointer self-start md:self-auto"
-            >
-              <Eye className="w-4 h-4" />
-              <span>Inspect Full Resolution Dieline</span>
-            </button>
+            <span className="font-mono text-xs text-[#4A152E] uppercase tracking-widest">
+              SLIDE {activeSlideIndex + 1} OF 5
+            </span>
           </div>
 
-          <div className="relative group cursor-pointer overflow-hidden border border-stone-800 bg-stone-950 p-4" onClick={() => setShowDielineModal(true)}>
-            <img
-              src="/assets/cameola-dieline.png"
-              alt="Cameola Foamer Packaging Dieline Blueprint"
-              className="w-full h-auto max-h-[450px] object-contain mx-auto transition-transform duration-500 group-hover:scale-102"
-            />
-            <div className="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <div className="flex items-center gap-2 px-4 py-2 bg-white text-stone-950 font-mono text-xs uppercase tracking-wider">
-                <Maximize2 className="w-4 h-4" />
-                <span>Click to Expand Dieline Blueprint</span>
+          {/* Slide Tab Buttons */}
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-8">
+            {IDEATION_SLIDES.map((slide, idx) => (
+              <button
+                key={slide.id}
+                onClick={() => setActiveSlideIndex(idx)}
+                className={`p-3 text-left transition-all duration-200 border cursor-pointer ${
+                  activeSlideIndex === idx
+                    ? 'bg-[#4A152E] text-white border-[#4A152E] shadow-sm'
+                    : 'bg-[#EFECE6] text-stone-700 border-[#E2DFD7] hover:border-[#4A152E]'
+                }`}
+              >
+                <div className="font-mono text-[10px] tracking-widest opacity-80 mb-1">
+                  PAGE 0{slide.id}
+                </div>
+                <div className="font-serif text-xs line-clamp-1 font-medium">
+                  {slide.title}
+                </div>
+              </button>
+            ))}
+          </div>
+
+          {/* Active Slide Display Box */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-[#F7F6F3] p-6 md:p-8 border border-[#E2DFD7]">
+            {/* Slide Preview Image */}
+            <div
+              className="lg:col-span-7 relative group cursor-pointer overflow-hidden border border-[#E2DFD7] bg-white p-3 shadow-xs"
+              onClick={() => setLightboxImage(activeSlide.src)}
+            >
+              <img
+                src={activeSlide.src}
+                alt={activeSlide.title}
+                className="w-full h-auto max-h-[480px] object-contain mx-auto transition-transform duration-500 group-hover:scale-102"
+              />
+              <div className="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div className="flex items-center gap-2 px-4 py-2 bg-white text-stone-950 font-mono text-xs uppercase tracking-wider">
+                  <Maximize2 className="w-4 h-4 text-[#4A152E]" />
+                  <span>Inspect Full Slide</span>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        {/* Iteration Timeline Grid */}
-        <div>
-          <h3 className="font-serif text-2xl text-stone-950 font-normal mb-8 pb-3 border-b border-[#E2DFD7]">
-            Evolutionary Prototyping Timeline
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {ITERATIONS.map((item, idx) => (
-              <div key={idx} className="p-6 bg-white border border-[#E2DFD7] space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="font-serif text-lg font-medium text-stone-950">
-                    {item.version}
-                  </span>
-                  <span
-                    className={`font-mono text-[10px] px-2 py-0.5 ${
-                      item.status === 'APPROVED'
-                        ? 'bg-[#4A152E] text-white'
-                        : item.status === 'TESTED'
-                        ? 'bg-amber-100 text-amber-900'
-                        : 'bg-stone-200 text-stone-600'
-                    }`}
-                  >
-                    {item.status}
-                  </span>
-                </div>
-                <span className="inline-block font-mono text-xs text-[#4A152E]">
-                  {item.tag}
+            {/* Slide Details */}
+            <div className="lg:col-span-5 space-y-6">
+              <span className="font-mono text-xs text-[#4A152E] uppercase tracking-widest font-semibold block">
+                {activeSlide.subtitle}
+              </span>
+              <h4 className="font-serif text-2xl md:text-3xl text-stone-950 font-normal leading-tight">
+                {activeSlide.title}
+              </h4>
+              <p className="text-stone-600 text-sm leading-relaxed font-light">
+                {activeSlide.desc}
+              </p>
+
+              <div className="space-y-3 pt-4 border-t border-[#E2DFD7]">
+                <span className="font-mono text-xs uppercase tracking-wider text-stone-900 font-semibold block">
+                  Design Rationale & Highlights
                 </span>
-                <p className="text-xs text-stone-600 font-sans leading-relaxed">
-                  {item.desc}
-                </p>
+                {activeSlide.highlights.map((h, i) => (
+                  <div key={i} className="flex items-center gap-2.5 text-xs md:text-sm text-stone-700">
+                    <CheckCircle2 className="w-4 h-4 text-[#4A152E] shrink-0" />
+                    <span>{h}</span>
+                  </div>
+                ))}
               </div>
-            ))}
+
+              <button
+                onClick={() => setLightboxImage(activeSlide.src)}
+                className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#4A152E] text-white font-mono text-xs uppercase tracking-wider hover:bg-[#381023] transition-colors cursor-pointer"
+              >
+                <Eye className="w-4 h-4" />
+                <span>Expand High-Res Slide</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Dieline Full Resolution Modal */}
-      {showDielineModal && (
-        <div className="fixed inset-0 z-50 bg-stone-950/90 backdrop-blur-md flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-200">
-          <div className="relative max-w-5xl w-full bg-[#141414] border border-stone-800 p-6 shadow-2xl flex flex-col max-h-[90vh]">
+      {/* Lightbox Modal */}
+      {lightboxImage && (
+        <div
+          className="fixed inset-0 z-50 bg-stone-950/90 backdrop-blur-md flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-200"
+          onClick={() => setLightboxImage(null)}
+        >
+          <div
+            className="relative max-w-5xl w-full bg-[#141414] border border-stone-800 p-6 shadow-2xl flex flex-col max-h-[92vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="flex items-center justify-between pb-4 border-b border-stone-800 mb-4">
               <span className="font-mono text-xs text-pink-400 uppercase tracking-widest">
-                CAMEOLA PACKAGING DIELINE // 100% SCALE BLUEPRINT
+                IDEATION STORY DECK // FULL RESOLUTION INSPECTOR
               </span>
               <button
-                onClick={() => setShowDielineModal(false)}
+                onClick={() => setLightboxImage(null)}
                 className="text-stone-400 hover:text-white font-mono text-xs uppercase tracking-wider px-3 py-1 bg-stone-800 cursor-pointer"
               >
                 Close [ESC]
@@ -278,9 +220,9 @@ export default function BrainstormSection() {
             </div>
             <div className="overflow-auto flex-1 flex items-center justify-center p-4 bg-stone-950 border border-stone-800">
               <img
-                src="/assets/cameola-dieline.png"
-                alt="Full resolution cameola dieline"
-                className="max-w-full max-h-full object-contain"
+                src={lightboxImage}
+                alt="Full resolution slide"
+                className="max-w-full max-h-[75vh] object-contain"
               />
             </div>
           </div>

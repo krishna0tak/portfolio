@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
 
 const TOTAL_FRAMES = 299;
 
@@ -133,10 +132,10 @@ export default function ScrollUnboxing() {
     <section
       id="animation"
       ref={containerRef}
-      className="relative h-[450vh] bg-white text-stone-900 overflow-visible"
+      className="relative h-[450vh] bg-white text-stone-900 overflow-visible scroll-mt-20"
     >
-      {/* Sticky Fullscreen Canvas Stage */}
-      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-white">
+      {/* Sticky Fullscreen Canvas Stage with padding top to clear nav header */}
+      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-white pt-24 pb-8">
         {/* Subtle Loading Spinner */}
         {!isLoaded && (
           <div className="absolute inset-0 z-40 bg-white flex flex-col items-center justify-center p-6">
@@ -158,35 +157,6 @@ export default function ScrollUnboxing() {
           ref={canvasRef}
           className="w-full h-full object-contain pointer-events-none transition-opacity duration-300"
         />
-
-        {/* Minimal Unobtrusive Scrub Bar & Landing Hint */}
-        {isLoaded && (
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-3 pointer-events-none">
-            {scrollProgress === 0 && (
-              <div className="flex flex-col items-center gap-2 mb-2 animate-bounce">
-                <span className="font-mono text-[11px] text-stone-500 uppercase tracking-widest">
-                  Scroll to Unbox & Inspect 3D Bottle
-                </span>
-                <ChevronDown className="w-4 h-4 text-stone-400" />
-              </div>
-            )}
-
-            <div className="flex items-center gap-4 px-4 py-2 bg-stone-900/90 text-white backdrop-blur-md shadow-lg rounded-full">
-              <span className="font-mono text-[10px] text-stone-300 uppercase tracking-widest">
-                Scrub: {Math.round(scrollProgress * 100)}%
-              </span>
-              <div className="w-20 h-1 bg-stone-700 rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-white transition-all duration-75"
-                  style={{ width: `${scrollProgress * 100}%` }}
-                />
-              </div>
-              <span className="font-mono text-[10px] text-stone-300 font-medium">
-                {currentFrame + 1}/{TOTAL_FRAMES}
-              </span>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );
