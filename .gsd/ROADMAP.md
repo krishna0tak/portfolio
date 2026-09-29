@@ -1,23 +1,23 @@
 ---
 milestone: Vidushi Mewara — Design Case Study Presentation
 version: 3.1.0
-updated: 2026-09-30T00:36:00+05:30
+updated: 2026-09-30T01:27:00+05:30
 ---
 
 # Roadmap
 
 > **Current Phase:** 8 - Section-by-Section Editorial Refinement (Hero & Brand Mood Board)
-> **Status:** ready-to-execute
+> **Status:** complete
 
 ## Must-Haves (from User Direction)
 
-- [ ] Preserve scrolling unboxing section (`ScrollUnboxing.jsx`) 100% untouched
-- [ ] Remove text banner between scrolling unboxing and Section 01 in `HeroSection.jsx`
-- [ ] Refactor right-hand box into "WHAT WE DELIVERED // PROJECT INTRO"
-- [ ] Replace 4 bottom metric cards with an 8-card Design Process grid
-- [ ] Replace `03. IDEATION DOSSIER & CREATIVE DIRECTION` header with CAMEÓLA packaging logo mark
-- [ ] Implement Brand Mood Board showcase with temporary high-res placeholder image ready for user swap
-- [ ] Pass production build (`npm run build`) with zero errors
+- [x] Preserve scrolling unboxing section (`ScrollUnboxing.jsx`) 100% untouched
+- [x] Remove text banner between scrolling unboxing and Section 01 in `HeroSection.jsx`
+- [x] Refactor right-hand box into "WHAT WE DELIVERED // PROJECT INTRO"
+- [x] Replace 4 bottom metric cards with an 8-card Design Process grid
+- [x] Replace `03. IDEATION DOSSIER & CREATIVE DIRECTION` header with CAMEÓLA packaging logo mark
+- [x] Implement Brand Mood Board showcase with temporary high-res placeholder image ready for user swap
+- [x] Pass production build (`npm run build`) with zero errors
 
 ---
 
@@ -29,11 +29,11 @@ updated: 2026-09-30T00:36:00+05:30
 ---
 
 ### Phase 8: Section-by-Section Editorial Refinement (Hero & Brand Mood Board)
-**Status:** ⏳ Ready to Execute
+**Status:** ✅ Complete
 **Objective:** Remove the pre-Section 01 text banner, transform the side box into an introductory deliverables overview, expand bottom cards into an 8-card sequential design process grid, replace the Section 03 header with the authentic CAMEÓLA logo, and introduce the Brand Mood Board showcase.
 **Plans:**
-- [ ] Plan 8.1: Hero Section Refinement — Deliverables Intro & 8-Step Design Process Cards
-- [ ] Plan 8.2: Brand Logo & Mood Board Integration
+- [x] Plan 8.1: Hero Section Refinement — Deliverables Intro & 8-Step Design Process Cards
+- [x] Plan 8.2: Brand Logo & Mood Board Integration
 
 ---
 
@@ -42,7 +42,7 @@ updated: 2026-09-30T00:36:00+05:30
 | Phase | Status | Plans | Complete |
 |-------|--------|-------|----------|
 | 7 | ✅ | 2/2 | 100% |
-| 8 | ⏳ | 0/2 | 0% |
+| 8 | ✅ | 2/2 | 100% |
 
 ---
 
@@ -51,4 +51,4 @@ updated: 2026-09-30T00:36:00+05:30
 | Phase | Started | Completed | Duration |
 |-------|---------|-----------|----------|
 | 7 | 2026-09-29 | 2026-09-29 | ~15m |
-| 8 | 2026-09-30 | — | — |
+| 8 | 2026-09-30 | 2026-09-30 | ~14m |
