@@ -1,23 +1,21 @@
 ---
 milestone: Vidushi Mewara — Design Case Study Presentation
-version: 3.1.0
-updated: 2026-09-30T01:27:00+05:30
+version: 3.2.0
+updated: 2026-09-30T03:20:00+05:30
 ---
 
 # Roadmap
 
-> **Current Phase:** 8 - Section-by-Section Editorial Refinement (Hero & Brand Mood Board)
-> **Status:** complete
+> **Current Phase:** 9 - Editorial Streamlining (Remove Taxonomy & Ideation Deck)
+> **Status:** ready-to-execute
 
 ## Must-Haves (from User Direction)
 
-- [x] Preserve scrolling unboxing section (`ScrollUnboxing.jsx`) 100% untouched
-- [x] Remove text banner between scrolling unboxing and Section 01 in `HeroSection.jsx`
-- [x] Refactor right-hand box into "WHAT WE DELIVERED // PROJECT INTRO"
-- [x] Replace 4 bottom metric cards with an 8-card Design Process grid
-- [x] Replace `03. IDEATION DOSSIER & CREATIVE DIRECTION` header with CAMEÓLA packaging logo mark
-- [x] Implement Brand Mood Board showcase with temporary high-res placeholder image ready for user swap
-- [x] Pass production build (`npm run build`) with zero errors
+- [ ] Remove "DESIGN TAXONOMY & STRATEGIC PILLARS" section from `BrainstormSection.jsx`
+- [ ] Remove "5-Chapter Ideation Process Deck" section from `BrainstormSection.jsx`
+- [ ] Retain CAMEÓLA Paris packaging logo mark and Brand Mood Board showcase
+- [ ] Retain moodboard lightbox inspection capability
+- [ ] Pass production build (`npm run build`) with zero errors
 
 ---
 
@@ -30,10 +28,14 @@ updated: 2026-09-30T01:27:00+05:30
 
 ### Phase 8: Section-by-Section Editorial Refinement (Hero & Brand Mood Board)
 **Status:** ✅ Complete
-**Objective:** Remove the pre-Section 01 text banner, transform the side box into an introductory deliverables overview, expand bottom cards into an 8-card sequential design process grid, replace the Section 03 header with the authentic CAMEÓLA logo, and introduce the Brand Mood Board showcase.
+
+---
+
+### Phase 9: Editorial Streamlining (Remove Taxonomy & Ideation Deck)
+**Status:** ⏳ Ready to Execute
+**Objective:** Remove both the keyword taxonomy pills section and the 5-chapter ideation slider from `BrainstormSection.jsx`, focusing the section directly on the CAMEÓLA Paris brandmark and the Brand Mood Board showcase.
 **Plans:**
-- [x] Plan 8.1: Hero Section Refinement — Deliverables Intro & 8-Step Design Process Cards
-- [x] Plan 8.2: Brand Logo & Mood Board Integration
+- [ ] Plan 9.1: Remove Design Taxonomy Pills & 5-Chapter Ideation Deck
 
 ---
 
@@ -43,6 +45,7 @@ updated: 2026-09-30T01:27:00+05:30
 |-------|--------|-------|----------|
 | 7 | ✅ | 2/2 | 100% |
 | 8 | ✅ | 2/2 | 100% |
+| 9 | ⏳ | 0/1 | 0% |
 
 ---
 
@@ -52,3 +55,4 @@ updated: 2026-09-30T01:27:00+05:30
 |-------|---------|-----------|----------|
 | 7 | 2026-09-29 | 2026-09-29 | ~15m |
 | 8 | 2026-09-30 | 2026-09-30 | ~14m |
+| 9 | 2026-09-30 | — | — |
