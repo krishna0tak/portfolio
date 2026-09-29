@@ -35,14 +35,14 @@ export default function Navbar() {
         {/* Designer Case Study Logo Header */}
         <a href="#animation" className="group flex items-center gap-2.5 text-stone-900 transition-opacity">
           <div className="w-7 h-7 bg-[#4A152E] text-pink-100 flex items-center justify-center font-serif text-xs font-bold tracking-tight">
-            C
+            VM
           </div>
           <div className="flex flex-col">
             <span className="font-serif text-xs sm:text-sm tracking-wider uppercase font-semibold text-stone-950">
-              CAMEÓLA <span className="font-light italic text-[#4A152E]">Paris</span>
+              VIDUSHI <span className="font-light italic text-[#4A152E]">Mewara</span>
             </span>
             <span className="text-[9px] uppercase tracking-widest text-stone-500 font-mono -mt-0.5 hidden sm:inline-block">
-              Designer Case Study
+              DESIGN CASE STUDY // CAMEÓLA
             </span>
           </div>
         </a>
