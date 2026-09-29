@@ -1,5 +1,5 @@
 import React from 'react';
-import { Type, Palette, Layers, Sparkles, BookOpen, CheckCircle2 } from 'lucide-react';
+import { Type, Palette, Layers, Sparkles, BookOpen, CheckCircle2, ShieldCheck, Box } from 'lucide-react';
 import dielineSample from '../assets/packaging_extracted_png/crystel dew scrub_page_2.png';
 
 export default function FeatureBentoGrid() {
@@ -12,16 +12,16 @@ export default function FeatureBentoGrid() {
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2.5 h-2.5 bg-[#4A152E]" />
               <span className="font-mono text-xs text-[#4A152E] uppercase tracking-widest font-semibold">
-                06. PACKAGING DESIGN SYSTEM
+                06. PACKAGING DESIGN SYSTEM & PRINCIPLES
               </span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl text-stone-950 font-normal tracking-tight">
               Design Architecture & <br />
-              <span className="italic font-serif text-[#4A152E]">System Highlights</span>.
+              <span className="italic font-serif text-[#4A152E]">Structural System Highlights</span>.
             </h2>
           </div>
           <p className="text-stone-600 font-sans text-sm md:text-base max-w-md leading-relaxed font-light">
-            A cohesive visual identity unifying 11 skincare SKUs through typographic rigor, dual-panel dieline blueprints, curated color harmony, and French cosmetic heritage.
+            Vidushi Mewara structured the design system around four fundamental packaging engineering pillars: diacritic typographic hierarchy, dual-panel vector precision, chromatic harmony, and zero-glue origami sustainability.
           </p>
         </div>
 
@@ -32,13 +32,13 @@ export default function FeatureBentoGrid() {
             <div className="relative z-10 space-y-4 max-w-xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#4A152E] text-white text-[11px] font-mono uppercase tracking-widest">
                 <Type className="w-3.5 h-3.5" />
-                <span>BRAND TYPOGRAPHY & DIACRITICS</span>
+                <span>BRAND TYPOGRAPHY & DIACRITIC GEOMETRY</span>
               </div>
               <h3 className="font-serif text-3xl md:text-4xl text-white font-normal leading-tight">
                 Haute-Cosmétique Wordmark Architecture.
               </h3>
               <p className="text-stone-400 text-sm font-sans font-light leading-relaxed">
-                The CAMEÓLA Paris identity pairs high-contrast literary serifs with sharp italic accents. The custom diacritic 'É' anchors the brand's French origin, while modern grotesque typography governs volume callouts, formulas, and ingredient specifications with crystalline legibility.
+                The visual identity pairs high-contrast literary serifs with sharp italic accents. The custom diacritic 'É' was engineered with optical weight compensation to withstand hot-foil stamping and letterpress embossing, while modern grotesque typography governs technical formulas and volume callouts with crystalline legibility.
               </p>
             </div>
 
@@ -65,7 +65,7 @@ export default function FeatureBentoGrid() {
             </div>
           </div>
 
-          {/* Bento Item 2: Structural Dieline Blueprint (using actual vector dieline thumbnail) */}
+          {/* Bento Item 2: Structural Dieline Blueprint */}
           <div className="bg-white border border-[#E2DFD7] p-6 flex flex-col justify-between min-h-[380px] relative group overflow-hidden">
             <div>
               <div className="flex items-center justify-between mb-3">
@@ -78,7 +78,7 @@ export default function FeatureBentoGrid() {
                 Dual-Panel Vector Blueprint
               </h3>
               <p className="text-xs text-stone-600 font-sans leading-relaxed">
-                Every SKU deliverable contains Page 1 front label graphics and Page 2 flat carton dieline with precise tuck-end creases.
+                Every SKU deliverable pairs Page 1 front label graphics with Page 2 flat carton dieline geometry featuring zero-glue interlocking tuck-end tabs.
               </p>
             </div>
 
@@ -86,7 +86,7 @@ export default function FeatureBentoGrid() {
             <div className="mt-4 p-3 bg-[#EFECE6] border border-[#E2DFD7] flex items-center justify-center h-48 overflow-hidden">
               <img
                 src={dielineSample}
-                alt="Cameola Vector Dieline Blueprint"
+                alt="Vector Dieline Blueprint"
                 className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </div>
@@ -103,7 +103,7 @@ export default function FeatureBentoGrid() {
                 Baby Sky & Soft Pink Color System.
               </h3>
               <p className="text-stone-600 text-xs font-sans leading-relaxed">
-                Extracted directly from the designer's ideation deck: calm Baby Sky Blue and Soft Blush Pink contrasted against deep Cosmetic Plum (#4A152E) for instant shelf distinction.
+                Extracted directly from Vidushi Mewara's ideation deck: calm Baby Sky Blue and Soft Blush Pink contrasted against deep Cosmetic Plum (#4A152E) for instant shelf distinction.
               </p>
             </div>
 
@@ -130,18 +130,18 @@ export default function FeatureBentoGrid() {
             </div>
           </div>
 
-          {/* Bento Item 4: Unscented Manifesto & Sustainable Paperboard (Large 2-column) */}
+          {/* Bento Item 4: Unscented Manifesto & Sustainable Paperboard */}
           <div className="md:col-span-2 bg-[#EFECE6] border border-[#E2DFD7] p-8 md:p-12 flex flex-col justify-between space-y-8">
             <div className="space-y-4 max-w-xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#4A152E] text-white text-[11px] font-mono uppercase tracking-widest">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>DESIGN PHILOSOPHY</span>
+                <span>DESIGN PHILOSOPHY & CIRCULARITY</span>
               </div>
               <h3 className="font-serif text-3xl text-stone-950 font-normal leading-tight">
                 "Beauty That Speaks Without Scent."
               </h3>
               <p className="text-stone-600 text-sm font-sans leading-relaxed">
-                The designer's manifesto rejects artificial perfumes and visual clutter. Clean, gender-neutral packaging geometry communicates pure skin health, paired with 100% recyclable FSC unbleached paperboard cartons and zero-glue interlocking tabs.
+                Vidushi Mewara's design rationale rejects artificial perfumes and visual clutter. Clean, gender-neutral packaging geometry communicates pure skin health, paired with 100% recyclable FSC virgin paperboard cartons and zero-glue interlocking tabs.
               </p>
             </div>
 
@@ -156,7 +156,7 @@ export default function FeatureBentoGrid() {
               </div>
               <div>
                 <span className="font-serif text-2xl text-[#4A152E]">0%</span>
-                <p className="font-mono text-[10px] text-stone-500 uppercase tracking-widest">Synthetic Scent Callouts</p>
+                <p className="font-mono text-[10px] text-stone-500 uppercase tracking-widest">Toxic Adhesives Used</p>
               </div>
             </div>
           </div>
