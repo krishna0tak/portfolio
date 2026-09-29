@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDownRight, Box, ShieldCheck, RefreshCw, Sparkles } from 'lucide-react';
+import { ArrowDownRight, Box, ShieldCheck, RefreshCw, Sparkles, Compass, Layers, CheckCircle2, User } from 'lucide-react';
 
 export default function HeroSection() {
   return (
@@ -8,88 +8,107 @@ export default function HeroSection() {
         {/* Editorial Top Metadata Header */}
         <div className="flex flex-wrap items-center justify-between gap-4 pb-8 border-b border-stone-200">
           <div className="flex items-center gap-3 flex-wrap">
-            <span className="font-mono text-xs text-[#4A152E] uppercase tracking-widest font-semibold">
-              DESIGNER CASE STUDY // CAMEÓLA PARIS
+            <span className="font-mono text-xs text-[#4A152E] uppercase tracking-widest font-semibold flex items-center gap-1.5">
+              <User className="w-3.5 h-3.5" />
+              VIDUSHI MEWARA // INDUSTRIAL & PACKAGING DESIGN CASE STUDY
             </span>
             <span className="text-stone-300">|</span>
             <span className="font-mono text-xs text-stone-500 uppercase tracking-wider">
-              11-SKU LUXURY SKINCARE PACKAGING SYSTEM
+              PROJECT: CAMEÓLA PARIS 11-SKU STRUCTURAL PACKAGING
             </span>
           </div>
 
           <div className="flex items-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-[#4A152E] animate-pulse" />
             <span className="font-mono text-xs text-stone-700 uppercase tracking-wider font-semibold">
-              STATUS: COMPLETE DESIGN & DIELINE DELIVERABLE
+              STATUS: COMPLETE DESIGN ARCHIVE & VECTOR DIELINES
             </span>
           </div>
         </div>
 
-        {/* Overview Statement */}
+        {/* Case Study Statement & Challenge */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 py-16 items-start">
           <div className="lg:col-span-8 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-pink-50 border border-pink-200 font-mono text-xs text-[#4A152E]">
-              <span>02. DESIGN STATEMENT & BRAND PHILOSOPHY</span>
+              <Compass className="w-3.5 h-3.5" />
+              <span>01. THE DESIGN BRIEF & ARCHITECTURAL PROBLEM</span>
             </div>
+            
             <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-stone-950 leading-[1.08] tracking-tight">
-              Beauty That Speaks <br />
+              Engineering Tactile Luxury <br />
               <span className="italic font-serif font-light text-[#4A152E]">
-                Without Synthetic Scent.
+                Through Zero-Glue Structural Origami.
               </span>
             </h2>
+
             <p className="text-base md:text-lg text-stone-600 font-sans font-light max-w-2xl leading-relaxed">
-              A comprehensive brand identity and structural packaging presentation for <strong>CAMEÓLA Paris</strong>. Inspired by the timeless elegance of the Camellia blossom, French minimalist architecture, and gender-neutral pure skincare formulations.
+              An exhaustive packaging architecture and industrial design case study by <strong>Vidushi Mewara</strong>. The core mandate was to conceptualize and engineer a cohesive 11-SKU identity for <strong>CAMEÓLA Paris</strong>—a clean beauty house dedicated to botanical purity without synthetic fragrance.
+            </p>
+
+            <p className="text-sm md:text-base text-stone-600 font-sans font-light max-w-2xl leading-relaxed">
+              Rather than defaulting to standard composite plastics and non-recyclable hot-melt adhesives typical in luxury cosmetics, this project rethinks the physical unboxing ritual entirely through sustainable FSC virgin paperboard, friction-fit locking geometry, and classical French typographic restraint.
             </p>
 
             <div className="flex flex-wrap gap-2 pt-2">
               <span className="px-3 py-1 bg-stone-100 border border-stone-200 font-mono text-[11px] text-stone-700 uppercase">
-                #ParisHeritage
-              </span>
-              <span className="px-3 py-1 bg-stone-100 border border-stone-200 font-mono text-[11px] text-stone-700 uppercase">
-                #CamelliaElegance
-              </span>
-              <span className="px-3 py-1 bg-stone-100 border border-stone-200 font-mono text-[11px] text-stone-700 uppercase">
-                #BabySkyAndPink
+                #IndustrialPackaging
               </span>
               <span className="px-3 py-1 bg-stone-100 border border-stone-200 font-mono text-[11px] text-stone-700 uppercase">
                 #ZeroGlueDieline
               </span>
               <span className="px-3 py-1 bg-stone-100 border border-stone-200 font-mono text-[11px] text-stone-700 uppercase">
-                #FragranceFreePurity
+                #FSCPaperboard
+              </span>
+              <span className="px-3 py-1 bg-stone-100 border border-stone-200 font-mono text-[11px] text-stone-700 uppercase">
+                #FrenchAestheticHeritage
+              </span>
+              <span className="px-3 py-1 bg-stone-100 border border-stone-200 font-mono text-[11px] text-stone-700 uppercase">
+                #3DKinematicStudy
+              </span>
+              <span className="px-3 py-1 bg-stone-100 border border-stone-200 font-mono text-[11px] text-stone-700 uppercase">
+                #MaterialTesting
               </span>
             </div>
           </div>
 
           <div className="lg:col-span-4 space-y-6 bg-stone-50 p-8 border border-stone-200 shadow-xs">
             <h3 className="font-mono text-xs uppercase tracking-widest text-[#4A152E] font-semibold border-b border-stone-200 pb-3">
-              DESIGN PROJECT METRICS
+              CASE STUDY SPECIFICATIONS
             </h3>
             <div className="space-y-4">
               <div className="flex items-center justify-between text-xs font-mono text-stone-600 border-b border-stone-200/80 pb-2">
-                <span>PROJECT TYPE</span>
-                <span className="text-stone-950 font-semibold">BRAND & PACKAGING SYSTEM</span>
+                <span>LEAD DESIGNER</span>
+                <span className="text-stone-950 font-semibold">VIDUSHI MEWARA</span>
+              </div>
+              <div className="flex items-center justify-between text-xs font-mono text-stone-600 border-b border-stone-200/80 pb-2">
+                <span>DISCIPLINE</span>
+                <span className="text-stone-950 font-semibold">PACKAGING & INDUSTRIAL DESIGN</span>
+              </div>
+              <div className="flex items-center justify-between text-xs font-mono text-stone-600 border-b border-stone-200/80 pb-2">
+                <span>PROJECT SUBJECT</span>
+                <span className="text-stone-950 font-semibold">CAMEÓLA PARIS SYSTEM</span>
               </div>
               <div className="flex items-center justify-between text-xs font-mono text-stone-600 border-b border-stone-200/80 pb-2">
                 <span>DELIVERED SKUS</span>
-                <span className="text-stone-950 font-semibold">11 PRODUCT PACKAGES</span>
+                <span className="text-stone-950 font-semibold">11 STRUCTURAL DIELINES</span>
               </div>
               <div className="flex items-center justify-between text-xs font-mono text-stone-600 border-b border-stone-200/80 pb-2">
-                <span>IDEATION THEORY</span>
-                <span className="text-stone-950 font-semibold">5-PAGE PROCESS DECK</span>
+                <span>IDEATION DECK</span>
+                <span className="text-stone-950 font-semibold">5-PAGE PROCESS DOSSIER</span>
               </div>
               <div className="flex items-center justify-between text-xs font-mono text-stone-600 border-b border-stone-200/80 pb-2">
-                <span>WORKSHOP CAPTURES</span>
-                <span className="text-stone-950 font-semibold">12 STUDIO PHOTOS</span>
+                <span>STUDIO RESEARCH</span>
+                <span className="text-stone-950 font-semibold">12 PHYSICAL PROTOTYPES</span>
               </div>
               <div className="flex items-center justify-between text-xs font-mono text-stone-600 border-b border-stone-200/80 pb-2">
-                <span>PACKAGING ZIP</span>
-                <span className="text-stone-950 font-semibold">VECTOR DIELINE SUITE</span>
+                <span>3D VISUALIZATION</span>
+                <span className="text-stone-950 font-semibold">299-FRAME KINEMATIC SIMULATION</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Metric Cards Grid */}
+        {/* Case Study Metric Cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-stone-200">
           <div className="p-6 bg-stone-50 border border-stone-200 hover:border-[#4A152E]/30 transition-colors">
             <div className="flex items-center justify-between text-stone-700 mb-4">
@@ -100,7 +119,7 @@ export default function HeroSection() {
               11 SKUs
             </div>
             <p className="font-mono text-xs text-stone-500 uppercase tracking-wider">
-              Cohesive Product Range
+              Modular Dieline Architecture
             </p>
           </div>
 
@@ -110,10 +129,10 @@ export default function HeroSection() {
               <span className="font-mono text-xs text-stone-400">02</span>
             </div>
             <div className="font-serif text-3xl text-stone-950 font-normal mb-1">
-              5 Pages
+              5 Chapters
             </div>
             <p className="font-mono text-xs text-stone-500 uppercase tracking-wider">
-              Ideation Theory Deck
+              Ideation & Theory Dossier
             </p>
           </div>
 
@@ -123,10 +142,10 @@ export default function HeroSection() {
               <span className="font-mono text-xs text-stone-400">03</span>
             </div>
             <div className="font-serif text-3xl text-stone-950 font-normal mb-1">
-              100%
+              0% Glue
             </div>
             <p className="font-mono text-xs text-stone-500 uppercase tracking-wider">
-              Zero-Glue Box Assembly
+              Friction-Lock Assembly
             </p>
           </div>
 
@@ -136,10 +155,10 @@ export default function HeroSection() {
               <span className="font-mono text-xs text-stone-400">04</span>
             </div>
             <div className="font-serif text-3xl text-stone-950 font-normal mb-1">
-              Paris / FR
+              12 Captures
             </div>
             <p className="font-mono text-xs text-stone-500 uppercase tracking-wider">
-              Brand Positioning Origin
+              Physical Workshop Tests
             </p>
           </div>
         </div>
