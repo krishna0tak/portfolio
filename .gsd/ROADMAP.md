@@ -1,47 +1,33 @@
 ---
-milestone: Augen.pro Minimal Redesign v2.0
-version: 2.0.0
-updated: 2026-09-18T18:24:00+05:30
+milestone: Vidushi Mewara — Design Case Study Presentation
+version: 3.0.0
+updated: 2026-09-29T12:25:00+05:30
 ---
 
 # Roadmap
 
-> **Current Phase:** 4 - Augen.pro Core Aesthetics & Foamer Hero Stage
-> **Status:** planning
+> **Current Phase:** 7 - Designer Case Study Presentation & Expressive Refinement
+> **Status:** ready-to-execute
 
-## Must-Haves (from SPEC)
+## Must-Haves (from User Direction)
 
-- [ ] Augen.pro color palette (`#f2f2f4` off-white, `#0f1012` off-black, `#0071e3` blue, `#ff5102` orange)
-- [ ] Floating blurred pill navigation bar with logo mark and hover transitions
-- [ ] Hero section featuring `augen.pro` typography, category pills, CTA, and embedded `foamer` 299-frame canvas scroll stage
-- [ ] Bento-box feature grid and minimal list rows matching `augen.pro` component flow
-- [ ] Minimal footer with status indicator and back-to-top button
+- [ ] Rebrand website identity from Cameola Paris company storefront to "VIDUSHI MEWARA // DESIGN CASE STUDY"
+- [ ] Remove all Cameola Paris company logos from site chrome (preserve only inside project renders, mockups, and dieline graphics)
+- [ ] Shift tone from commercial selling to in-depth industrial & packaging design presentation
+- [ ] Contextualize the 3D scroll unboxing as an interactive kinematic prototype study with mechanical HUD annotations
+- [ ] Deepen storytelling across Ideation (5 slides), Workshop Studio (12 physical prototypes), and 11-SKU Dieline Suite
+- [ ] Build comprehensive Designer Colophon & Reflection celebrating Vidushi Mewara's role and technical stack
 
 ---
 
 ## Phases
 
-### Phase 4: Augen.pro Design System & Floating Navigation
-**Status:** ⏳ In Progress
-**Objective:** Establish `augen.pro` typography, color tokens (`#f2f2f4`, `#0f1012`, `#0071e3`), rounded pill styling, and build the floating backdrop-blur `Navbar`.
+### Phase 7: Designer Case Study Presentation & Expressive Refinement
+**Status:** ⏳ Ready to Execute
+**Objective:** Replace commercial storefront branding with Vidushi Mewara's designer case study identity, remove standalone company logos, frame the 3D unboxing as an interactive kinematic mechanics study, and express the rich structural packaging engineering story across all sections.
 **Plans:**
-- [ ] Plan 4.1: Establish `augen.pro` design tokens in `index.css` and build floating `Navbar` component.
-
----
-
-### Phase 5: Hero Showcase with Embedded Foamer Canvas Scroll Stage
-**Status:** ⏳ Pending
-**Objective:** Build `HeroSection` following `augen.pro` layout (header text, category pills, CTA link) with the 299-frame `foamer` canvas scroll animation embedded directly into the hero showcase stage.
-**Plans:**
-- [ ] Plan 5.1: Build `HeroSection` with embedded `foamer` canvas scroll scrubbing stage.
-
----
-
-### Phase 6: Augen.pro Feature Grid & Minimal Footer
-**Status:** ⏳ Pending
-**Objective:** Implement bento-box feature grid, product list cards, and minimalist footer matching `augen.pro` component flow.
-**Plans:**
-- [ ] Plan 6.1: Build `FeatureGrid` and `Footer` components, assemble in `App.jsx`, and run build verification.
+- [ ] Plan 7.1: Designer Identity, Header Architecture & Contextual Hero Presentation
+- [ ] Plan 7.2: Expressive Design Storytelling, Deep Case Study Analysis & Designer Colophon
 
 ---
 
@@ -49,9 +35,7 @@ updated: 2026-09-18T18:24:00+05:30
 
 | Phase | Status | Plans | Complete |
 |-------|--------|-------|----------|
-| 4 | ⏳ | 0/1 | 0% |
-| 5 | ⏳ | 0/1 | 0% |
-| 6 | ⏳ | 0/1 | 0% |
+| 7 | ⏳ | 0/2 | 0% |
 
 ---
 
@@ -59,6 +43,4 @@ updated: 2026-09-18T18:24:00+05:30
 
 | Phase | Started | Completed | Duration |
 |-------|---------|-----------|----------|
-| 4 | 2026-09-18 | — | — |
-| 5 | — | — | — |
-| 6 | — | — | — |
+| 7 | 2026-09-29 | — | — |
