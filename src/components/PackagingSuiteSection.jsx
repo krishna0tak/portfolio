@@ -169,16 +169,16 @@ export default function PackagingSuiteSection() {
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2.5 h-2.5 bg-[#4A152E]" />
               <span className="font-mono text-xs text-[#4A152E] uppercase tracking-widest font-semibold">
-                05. PACKAGING SYSTEM SUITE
+                05. STRUCTURAL ENGINEERING & 11-SKU DIELINE ARCHITECTURE
               </span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl text-stone-950 font-normal tracking-tight">
-              The 11-SKU Packaging <br />
-              <span className="italic font-serif text-[#4A152E]">Vector & Dieline Ecosystem</span>.
+              The 11-SKU Packaging System: <br />
+              <span className="italic font-serif text-[#4A152E]">Modular Vector Dieline Blueprints</span>.
             </h2>
           </div>
           <p className="text-stone-600 font-sans text-sm md:text-base max-w-md leading-relaxed font-light">
-            Extracted directly from the designer's <code className="bg-[#EFECE6] px-1.5 py-0.5 border border-[#E2DFD7] text-xs">Product packaging.zip</code> deliverable. Inspect both front graphic panel dielines and structural box layouts for every product.
+            Engineered by Vidushi Mewara. Rather than disconnected packaging, all 11 SKUs share a unified structural grid—incorporating dual-panel vector dielines, interlocking zero-glue tuck flaps, and micro-calibrated label bleeds.
           </p>
         </div>
 
