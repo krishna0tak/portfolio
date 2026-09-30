@@ -1,21 +1,23 @@
 ---
 milestone: Vidushi Mewara — Design Case Study Presentation
-version: 3.2.0
-updated: 2026-09-30T03:25:00+05:30
+version: 3.3.0
+updated: 2026-10-01T02:00:00+05:30
 ---
 
 # Roadmap
 
-> **Current Phase:** 9 - Editorial Streamlining (Remove Taxonomy & Ideation Deck)
-> **Status:** complete
+> **Current Phase:** 10 - Unified Interactive Packaging & Product Showcase
+> **Status:** ready-to-execute
 
 ## Must-Haves (from User Direction)
 
-- [x] Remove "DESIGN TAXONOMY & STRATEGIC PILLARS" section from `BrainstormSection.jsx`
-- [x] Remove "5-Chapter Ideation Process Deck" section from `BrainstormSection.jsx`
-- [x] Retain CAMEÓLA Paris packaging logo mark and Brand Mood Board showcase
-- [x] Retain moodboard lightbox inspection capability
-- [x] Pass production build (`npm run build`) with zero errors
+- [ ] Unify two separate image showcase sections into ONE master showcase section
+- [ ] Card thumbnail displays Front Panel Dieline by default
+- [ ] Card hover smoothly reveals Physical Product Capture photo
+- [ ] Modal opens and displays all THREE images related to the SKU (front panel dieline, product capture, box layout dieline)
+- [ ] Remove standalone `WorkshopGallerySection` from `App.jsx`
+- [ ] Update Navbar and Footer navigation links
+- [ ] Pass production build (`npm run build`) with zero errors
 
 ---
 
@@ -33,9 +35,14 @@ updated: 2026-09-30T03:25:00+05:30
 
 ### Phase 9: Editorial Streamlining (Remove Taxonomy & Ideation Deck)
 **Status:** ✅ Complete
-**Objective:** Remove both the keyword taxonomy pills section and the 5-chapter ideation slider from `BrainstormSection.jsx`, focusing the section directly on the CAMEÓLA Paris brandmark and the Brand Mood Board showcase.
+
+---
+
+### Phase 10: Unified Interactive Packaging & Product Showcase
+**Status:** ⏳ Ready to Execute
+**Objective:** Replace two separate image showcase sections with a single unified showcase featuring front panel dielines as default thumbnails, product captures on hover, and an interactive 3-image modal inspector displaying front dieline, physical product capture, and box layout dieline.
 **Plans:**
-- [x] Plan 9.1: Remove Design Taxonomy Pills & 5-Chapter Ideation Deck
+- [ ] Plan 10.1: Build Unified Interactive Packaging & Product Showcase
 
 ---
 
@@ -46,6 +53,7 @@ updated: 2026-09-30T03:25:00+05:30
 | 7 | ✅ | 2/2 | 100% |
 | 8 | ✅ | 2/2 | 100% |
 | 9 | ✅ | 1/1 | 100% |
+| 10 | ⏳ | 0/1 | 0% |
 
 ---
 
@@ -56,3 +64,4 @@ updated: 2026-09-30T03:25:00+05:30
 | 7 | 2026-09-29 | 2026-09-29 | ~15m |
 | 8 | 2026-09-30 | 2026-09-30 | ~14m |
 | 9 | 2026-09-30 | 2026-09-30 | ~5m |
+| 10 | 2026-10-01 | — | — |
