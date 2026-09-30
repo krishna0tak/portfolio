@@ -16,9 +16,8 @@ export default function Navbar() {
   const navItems = [
     { label: '3D Scroll', href: '#animation' },
     { label: 'Overview', href: '#overview' },
-    { label: 'Theory', href: '#theory' },
-    { label: 'Workshop', href: '#workshop' },
-    { label: 'Packaging', href: '#packaging-suite' },
+    { label: 'Mood Board', href: '#theory' },
+    { label: 'Showcase', href: '#packaging-suite' },
     { label: 'System', href: '#features' },
     { label: 'Deliverables', href: '#specs' },
   ];

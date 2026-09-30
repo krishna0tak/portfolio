@@ -64,19 +64,16 @@ export default function Footer() {
                 <a href="#overview" className="hover:text-pink-300 transition-colors">02. Design Challenge & Brief</a>
               </li>
               <li>
-                <a href="#theory" className="hover:text-pink-300 transition-colors">03. Ideation Theory & Deck</a>
+                <a href="#theory" className="hover:text-pink-300 transition-colors">03. Brand Logo & Mood Board</a>
               </li>
               <li>
-                <a href="#workshop" className="hover:text-pink-300 transition-colors">04. Studio Workshop Captures</a>
+                <a href="#packaging-suite" className="hover:text-pink-300 transition-colors">04. 11-SKU Interactive Showcase</a>
               </li>
               <li>
-                <a href="#packaging-suite" className="hover:text-pink-300 transition-colors">05. 11-SKU Dieline Suite</a>
+                <a href="#features" className="hover:text-pink-300 transition-colors">05. System Architecture</a>
               </li>
               <li>
-                <a href="#features" className="hover:text-pink-300 transition-colors">06. System Architecture</a>
-              </li>
-              <li>
-                <a href="#specs" className="hover:text-pink-300 transition-colors">07. Engineering Matrix</a>
+                <a href="#specs" className="hover:text-pink-300 transition-colors">06. Engineering Matrix</a>
               </li>
             </ul>
           </div>
