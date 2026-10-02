@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Cpu,
   Layers,
@@ -13,6 +13,7 @@ import {
   Sliders,
   Scissors
 } from 'lucide-react';
+import { useInView } from '../hooks/useInView';
 
 const DIGITAL_TOOLS = [
   {
@@ -20,6 +21,7 @@ const DIGITAL_TOOLS = [
     category: '3D Simulation & Animation',
     version: 'Blender 3.6 LTS / Cycles Engine',
     badge: 'Primary 3D Pipeline',
+    isLive: true,
     highlight: '299-Frame Unboxing Kinematics',
     desc: 'Engineered the 3D container geometry, folding carton opening kinematics, and procedural material shaders. Leveraged Cycles ray-tracing with subsurface scattering (SSS) for cosmetic emulsions and calibrated Fresnel IOR for glass and acrylic specular behavior.',
     skills: [
@@ -112,14 +114,21 @@ const PACKAGING_SKILLS = [
 ];
 
 export default function DesignerSkillsSection() {
+  const [sectionRef, isInView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [hoveredTool, setHoveredTool] = useState(null);
+
   return (
-    <section id="tools-skills" className="py-24 bg-white border-b border-[#E2DFD7] scroll-mt-20">
+    <section
+      ref={sectionRef}
+      id="tools-skills"
+      className="relative py-24 bg-white border-b border-[#E2DFD7] scroll-mt-20 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-[#E2DFD7]">
+        <div className={`flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-[#E2DFD7] reveal-fade-up ${isInView ? 'is-revealed' : ''}`}>
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-2.5 h-2.5 bg-[#4A152E]" />
+              <span className="w-2.5 h-2.5 bg-[#4A152E] animate-pulse-dot" />
               <span className="font-mono text-xs text-[#4A152E] uppercase tracking-widest font-semibold">
                 05. DESIGNER TOOLKIT & IMPLEMENTED SKILLS
               </span>
@@ -135,10 +144,10 @@ export default function DesignerSkillsSection() {
         </div>
 
         {/* Part 1: Software & Digital Tools Suite */}
-        <div className="mb-16">
+        <div className={`mb-16 reveal-fade-up ${isInView ? 'is-revealed' : ''}`}>
           <div className="flex items-center justify-between pb-4 mb-8 border-b border-[#E2DFD7]/80">
             <div className="flex items-center gap-2">
-              <Cpu className="w-4 h-4 text-[#4A152E]" />
+              <Cpu className="w-4 h-4 text-[#4A152E] animate-pulse-dot" />
               <span className="font-mono text-xs text-stone-900 uppercase tracking-widest font-semibold">
                 Digital Production Software Stack
               </span>
@@ -149,53 +158,80 @@ export default function DesignerSkillsSection() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {DIGITAL_TOOLS.map((tool, idx) => (
-              <div
-                key={idx}
-                className="bg-[#F8F7F4] border border-[#E2DFD7] p-8 flex flex-col justify-between group hover:border-[#4A152E] transition-all duration-300 shadow-2xs hover:shadow-md"
-              >
-                <div>
-                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#E2DFD7]">
-                    <span className="font-mono text-[10px] text-[#4A152E] uppercase tracking-widest font-semibold">
-                      {tool.category}
+            {DIGITAL_TOOLS.map((tool, idx) => {
+              const isHovered = hoveredTool === idx;
+              return (
+                <div
+                  key={idx}
+                  onMouseEnter={() => setHoveredTool(idx)}
+                  onMouseLeave={() => setHoveredTool(null)}
+                  className={`relative bg-[#F8F7F4] border p-8 flex flex-col justify-between group transition-all duration-300 overflow-hidden ${
+                    isHovered
+                      ? 'border-[#4A152E] bg-white -translate-y-1.5 shadow-xl shadow-[#4A152E]/5'
+                      : 'border-[#E2DFD7] hover:border-stone-300 shadow-2xs'
+                  }`}
+                >
+                  {/* Subtle top indicator bar */}
+                  <div
+                    className={`absolute top-0 left-0 right-0 h-[2px] bg-[#4A152E] transition-transform duration-300 origin-left ${
+                      isHovered ? 'scale-x-100' : 'scale-x-0'
+                    }`}
+                  />
+
+                  <div>
+                    <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#E2DFD7]">
+                      <span className="font-mono text-[10px] text-[#4A152E] uppercase tracking-widest font-semibold">
+                        {tool.category}
+                      </span>
+                      {tool.isLive ? (
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-emerald-50 border border-emerald-200 text-emerald-800 font-mono text-[10px] uppercase tracking-wider shadow-2xs">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse-dot" />
+                          {tool.badge}
+                        </span>
+                      ) : (
+                        <span className="px-2.5 py-0.5 bg-white border border-[#E2DFD7] text-stone-700 font-mono text-[10px] uppercase tracking-wider">
+                          {tool.badge}
+                        </span>
+                      )}
+                    </div>
+
+                    <h3 className={`font-serif text-2xl font-normal transition-colors mb-1 ${
+                      isHovered ? 'text-[#4A152E]' : 'text-stone-950'
+                    }`}>
+                      {tool.name}
+                    </h3>
+                    <span className="font-mono text-[11px] text-stone-400 block mb-4">
+                      {tool.version} • <span className="text-[#4A152E] font-medium">{tool.highlight}</span>
                     </span>
-                    <span className="px-2.5 py-0.5 bg-white border border-[#E2DFD7] text-stone-700 font-mono text-[10px] uppercase tracking-wider">
-                      {tool.badge}
-                    </span>
+
+                    <p className="text-xs sm:text-sm text-stone-600 font-sans font-light leading-relaxed mb-6">
+                      {tool.desc}
+                    </p>
                   </div>
 
-                  <h3 className="font-serif text-2xl text-stone-950 font-normal group-hover:text-[#4A152E] transition-colors mb-1">
-                    {tool.name}
-                  </h3>
-                  <span className="font-mono text-[11px] text-stone-400 block mb-4">
-                    {tool.version} • <span className="text-[#4A152E] font-medium">{tool.highlight}</span>
-                  </span>
-
-                  <p className="text-xs sm:text-sm text-stone-600 font-sans font-light leading-relaxed mb-6">
-                    {tool.desc}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-[#E2DFD7]">
-                  <span className="font-mono text-[10px] text-stone-400 uppercase tracking-widest block mb-2 font-semibold">
-                    Core Technical Implementations:
-                  </span>
-                  <div className="space-y-1.5">
-                    {tool.skills.map((skill, sIdx) => (
-                      <div key={sIdx} className="flex items-center gap-2 text-xs font-mono text-stone-800">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#4A152E] shrink-0" />
-                        <span>{skill}</span>
-                      </div>
-                    ))}
+                  <div className="pt-4 border-t border-[#E2DFD7]">
+                    <span className="font-mono text-[10px] text-stone-400 uppercase tracking-widest block mb-2 font-semibold">
+                      Core Technical Implementations:
+                    </span>
+                    <div className="space-y-1.5">
+                      {tool.skills.map((skill, sIdx) => (
+                        <div key={sIdx} className="flex items-center gap-2 text-xs font-mono text-stone-800">
+                          <CheckCircle2 className={`w-3.5 h-3.5 transition-colors ${
+                            isHovered ? 'text-[#4A152E]' : 'text-stone-400'
+                          }`} />
+                          <span className="group-hover:text-stone-900 transition-colors">{skill}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
         {/* Part 2: Industrial & Packaging Design Skills */}
-        <div>
+        <div className={`reveal-fade-up ${isInView ? 'is-revealed' : ''}`}>
           <div className="flex items-center justify-between pb-4 mb-8 border-b border-[#E2DFD7]/80">
             <div className="flex items-center gap-2">
               <Layers className="w-4 h-4 text-[#4A152E]" />
@@ -214,10 +250,10 @@ export default function DesignerSkillsSection() {
               return (
                 <div
                   key={idx}
-                  className="bg-white border border-[#E2DFD7] p-6 flex flex-col justify-between group hover:border-[#4A152E] transition-all duration-300 shadow-2xs hover:shadow-lg"
+                  className="bg-white border border-[#E2DFD7] p-6 flex flex-col justify-between group hover:border-[#4A152E] hover:-translate-y-1.5 transition-all duration-300 shadow-2xs hover:shadow-lg"
                 >
                   <div className="space-y-4">
-                    <div className="w-10 h-10 bg-[#4A152E]/10 text-[#4A152E] flex items-center justify-center rounded-xs group-hover:bg-[#4A152E] group-hover:text-white transition-colors">
+                    <div className="w-10 h-10 bg-[#4A152E]/10 text-[#4A152E] flex items-center justify-center rounded-xs group-hover:bg-[#4A152E] group-hover:text-white transition-colors duration-300">
                       <IconComponent className="w-5 h-5" />
                     </div>
 
@@ -225,7 +261,7 @@ export default function DesignerSkillsSection() {
                       <span className="font-mono text-[9px] text-[#4A152E] uppercase tracking-widest block font-semibold mb-0.5">
                         {skill.subtitle}
                       </span>
-                      <h4 className="font-serif text-lg text-stone-950 font-normal leading-snug">
+                      <h4 className="font-serif text-lg text-stone-950 font-normal leading-snug group-hover:text-[#4A152E] transition-colors">
                         {skill.title}
                       </h4>
                     </div>
@@ -244,7 +280,7 @@ export default function DesignerSkillsSection() {
                       {skill.tags.map((tag, tIdx) => (
                         <span
                           key={tIdx}
-                          className="px-1.5 py-0.5 bg-[#EFECE6] border border-[#E2DFD7] text-stone-700 font-mono text-[9px]"
+                          className="px-1.5 py-0.5 bg-[#EFECE6] border border-[#E2DFD7] text-stone-700 font-mono text-[9px] group-hover:border-pink-200 group-hover:text-[#4A152E] transition-colors"
                         >
                           {tag}
                         </span>
@@ -260,3 +296,4 @@ export default function DesignerSkillsSection() {
     </section>
   );
 }
+

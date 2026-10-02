@@ -15,6 +15,7 @@ import {
   Sparkles,
   ArrowRight
 } from 'lucide-react';
+import { useInView } from '../hooks/useInView';
 
 // ==========================================
 // 1. DIELINE IMPORTS (Page 1 & Page 2)
@@ -298,14 +299,20 @@ export default function PackagingSuiteSection() {
     setZoomAsset(null);
   };
 
+  const [sectionRef, isInView] = useInView({ threshold: 0.05, triggerOnce: true });
+
   return (
-    <section id="packaging-suite" className="py-24 bg-[#F8F7F4] border-b border-[#E2DFD7] scroll-mt-20">
+    <section
+      ref={sectionRef}
+      id="packaging-suite"
+      className="relative py-24 bg-[#F8F7F4] border-b border-[#E2DFD7] scroll-mt-20 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-8 border-b border-[#E2DFD7]">
+        <div className={`flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-8 border-b border-[#E2DFD7] reveal-fade-up ${isInView ? 'is-revealed' : ''}`}>
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-2.5 h-2.5 bg-[#4A152E]" />
+              <span className="w-2.5 h-2.5 bg-[#4A152E] animate-pulse-dot" />
               <span className="font-mono text-xs text-[#4A152E] uppercase tracking-widest font-semibold">
                 04. INTERACTIVE PACKAGING SHOWCASE & 11-SKU DIELINE SUITE
               </span>
@@ -320,14 +327,14 @@ export default function PackagingSuiteSection() {
               Engineered by Vidushi Mewara. Hover any card to instantly crossfade from the vector dieline to its exact matching studio product photograph.
             </p>
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#4A152E]/10 border border-[#4A152E]/20 text-[#4A152E] font-mono text-[11px] uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5" />
+              <Sparkles className="w-3.5 h-3.5 animate-pulse-dot" />
               <span>Click any card to open the 3-asset triad</span>
             </div>
           </div>
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap items-center gap-2 mb-12 pb-4 border-b border-[#E2DFD7]">
+        <div className={`flex flex-wrap items-center gap-2 mb-12 pb-4 border-b border-[#E2DFD7] reveal-fade-up ${isInView ? 'is-revealed' : ''}`}>
           <span className="font-mono text-xs text-stone-500 uppercase tracking-widest mr-2 flex items-center gap-1.5">
             <Filter className="w-3.5 h-3.5 text-[#4A152E]" />
             Filter Range:
@@ -339,7 +346,7 @@ export default function PackagingSuiteSection() {
               className={`px-4 py-2 font-mono text-xs uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                 activeCategory === cat
                   ? 'bg-[#4A152E] text-white shadow-xs'
-                  : 'bg-white text-stone-700 border border-[#E2DFD7] hover:border-[#4A152E]'
+                  : 'bg-white text-stone-700 border border-[#E2DFD7] hover:border-[#4A152E] hover:text-[#4A152E]'
               }`}
             >
               {cat}
@@ -348,12 +355,12 @@ export default function PackagingSuiteSection() {
         </div>
 
         {/* 11-SKU Interactive Showcase Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-fade-up ${isInView ? 'is-revealed' : ''}`}>
           {filteredSkus.map((sku) => (
             <div
               key={sku.id}
               onClick={() => openSkuModal(sku)}
-              className="bg-white border border-[#E2DFD7] overflow-hidden group cursor-pointer shadow-xs hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
+              className="bg-white border border-[#E2DFD7] overflow-hidden group cursor-pointer shadow-xs hover:border-[#4A152E]/50 hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               {/* Interactive Thumbnail Stage: Front Dieline (Default) ➔ Product Capture (Hover) */}
               <div className="relative overflow-hidden bg-gradient-to-b from-[#FAF9F6] to-[#ECEAE4] min-h-[340px] flex items-center justify-center p-6 border-b border-[#E2DFD7]/80">
