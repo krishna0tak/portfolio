@@ -4,8 +4,7 @@ import ScrollUnboxing from './components/ScrollUnboxing';
 import HeroSection from './components/HeroSection';
 import BrainstormSection from './components/BrainstormSection';
 import PackagingSuiteSection from './components/PackagingSuiteSection';
-import FeatureBentoGrid from './components/FeatureBentoGrid';
-import TechSpecsSection from './components/TechSpecsSection';
+import DesignerSkillsSection from './components/DesignerSkillsSection';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -25,11 +24,8 @@ export default function App() {
         {/* 04. Unified 11-SKU Packaging & Product Capture Showcase */}
         <PackagingSuiteSection />
         
-        {/* 05. Packaging Design System Highlights */}
-        <FeatureBentoGrid />
-        
-        {/* 06. Project Deliverables & Print Matrix */}
-        <TechSpecsSection />
+        {/* 05. Designer Tools & Implemented Skills */}
+        <DesignerSkillsSection />
       </main>
       <Footer />
     </div>

@@ -18,8 +18,7 @@ export default function Navbar() {
     { label: 'Overview', href: '#overview' },
     { label: 'Mood Board', href: '#theory' },
     { label: 'Showcase', href: '#packaging-suite' },
-    { label: 'System', href: '#features' },
-    { label: 'Deliverables', href: '#specs' },
+    { label: 'Tools & Skills', href: '#tools-skills' },
   ];
 
   return (

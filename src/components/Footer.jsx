@@ -70,10 +70,7 @@ export default function Footer() {
                 <a href="#packaging-suite" className="hover:text-pink-300 transition-colors">04. 11-SKU Interactive Showcase</a>
               </li>
               <li>
-                <a href="#features" className="hover:text-pink-300 transition-colors">05. System Architecture</a>
-              </li>
-              <li>
-                <a href="#specs" className="hover:text-pink-300 transition-colors">06. Engineering Matrix</a>
+                <a href="#tools-skills" className="hover:text-pink-300 transition-colors">05. Designer Tools & Implemented Skills</a>
               </li>
             </ul>
           </div>
