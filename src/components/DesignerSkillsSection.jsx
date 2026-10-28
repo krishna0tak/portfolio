@@ -17,99 +17,98 @@ import { useInView } from '../hooks/useInView';
 
 const DIGITAL_TOOLS = [
   {
-    name: 'Blender 3D (Cycles & LTS)',
-    category: '3D Simulation & Animation',
-    version: 'Blender 3.6 LTS / Cycles Engine',
-    badge: 'Primary 3D Pipeline',
-    isLive: true,
-    highlight: '299-Frame Unboxing Kinematics',
-    desc: 'Engineered the 3D container geometry, folding carton opening kinematics, and procedural material shaders. Leveraged Cycles ray-tracing with subsurface scattering (SSS) for cosmetic emulsions and calibrated Fresnel IOR for glass and acrylic specular behavior.',
+    name: 'Blender',
+    category: '3D Visualisation',
+    version: '3D Modelling',
+    badge: '3D Visualisation',
+    highlight: 'Visual Exploration',
+    desc: '3D visualisation and presentation to support design exploration.',
     skills: [
-      'Kinematic Box Opening Rigging',
-      'Subsurface Light Scattering (SSS)',
-      'Specular Roughness & IOR Physics',
-      'Photorealistic Studio Lighting Setup',
-      '299-Frame Scroll Web Sequence'
+      '3D Modelling',
+      'Visual Presentation',
+      'Material Exploration',
+      'Composition',
+      'Design Iteration'
     ]
   },
   {
     name: 'Adobe Illustrator',
-    category: 'Vector CAD & Dieline Engineering',
-    version: 'Vector CAD & Print Separation',
-    badge: '1:1 Production Blueprint',
-    highlight: '11 Full Dieline Architectures',
-    desc: 'Drafted millimeter-exact vector packaging dielines with distinct line layers for cut, score, and perforation. Built dedicated separation plates for spot UV varnish, blind debossing, and hot rose-gold foil stamping with 0.1mm press registration tolerances.',
+    category: 'Vector Design',
+    version: 'Vector Artwork',
+    badge: 'Packaging Artwork',
+    highlight: 'Logo & Packaging Design',
+    desc: 'Custom logo development, label layouts, and packaging artwork.',
     skills: [
-      '1:1 CAD Dieline Geometry',
-      'Spot UV & Foil Stamping Separation',
-      'Cut, Score & Perforation Layering',
-      'French Typographic Glyph Customization',
-      'Zero-Error Press Bleed Margins'
+      'Logo Customisation',
+      'Vector Illustration',
+      'Label Design',
+      'Packaging Layouts',
+      'Print-Ready Artwork'
     ]
   },
   {
     name: 'Adobe Photoshop',
-    category: 'CMF Synthesis & Studio Retouching',
-    version: 'Texture Mapping & Lighting',
-    badge: 'Surface Proofing',
-    highlight: 'D65 Daylight Simulation',
-    desc: 'Synthesized high-resolution paperboard fiber displacement maps, specular roughness masks, and label opacity alpha channels. Retouched physical studio workshop prototype photographs to balance studio strobes against true pigment drawdowns.',
+    category: 'Image Editing',
+    version: 'Image Creation',
+    badge: 'Digital Assets',
+    highlight: 'Product Imagery',
+    desc: 'Product visuals, ingredient graphics, website sliders, and social media assets.',
     skills: [
-      'CMF Texture Map Synthesis',
-      'D65 Daylight Color Calibration',
-      'Studio Prototype Photo Retouching',
-      'Alpha Channel Masking for Foil/Varnish',
-      'Specular Reflection Grading'
+      'Product Image Editing',
+      'Ingredient Visuals',
+      'Website Sliders',
+      'Social Media Creatives',
+      'Image Compositing'
     ]
   },
   {
-    name: 'Substance 3D / KeyShot',
-    category: 'Material Science & CMF Rendering',
-    version: 'Photorealistic Shader Pipeline',
-    badge: 'Material Physics',
-    highlight: 'FSC Fiber Tactility Study',
-    desc: 'Calibrated micro-roughness behavior of 350-400 GSM unbleached virgin paperboard versus velvet-touch aqueous varnish. Modeled metallic flake distribution in hot-stamped rose-gold foils under changing viewing angles.',
+    name: 'Adobe InDesign',
+    category: 'Layout & Production',
+    version: 'Page Layout',
+    badge: 'Artwork Preparation',
+    highlight: 'Print Production',
+    desc: 'Organising layouts and preparing production-ready design files.',
     skills: [
-      'Procedural Paperboard Fiber Shaders',
-      'Velvet Aqueous Varnish Emulation',
-      'Metallic Foil Flake Distribution',
-      'Specular Sheen Map Calibration'
+      'Layout Design',
+      'Typography',
+      'Document Setup',
+      'Artwork Preparation'
     ]
   }
 ];
 
 const PACKAGING_SKILLS = [
   {
-    icon: Scissors,
-    title: 'Zero-Glue Structural Origami',
-    subtitle: 'Sustainable Packaging Mechanics',
-    desc: 'Engineered interlocking friction-fit tabs and 15° angled retention flaps that hold cartons securely closed without toxic adhesives or synthetic tapes. Cartons unfold flat for 100% repulpability.',
-    metric: '100% Glue-Free',
-    tags: ['Friction-Fit Latch', 'Self-Locking Flaps', 'Suspension Collar']
+    icon: Compass,
+    title: 'Research & Ideation',
+    subtitle: 'Brand Research',
+    desc: 'Exploring references, moodboards, and initial directions.',
+    metric: 'Research & Exploration',
+    tags: ['#BrandResearch', '#Moodboards', '#Ideation']
+  },
+  {
+    icon: Sparkles,
+    title: 'Concept Development',
+    subtitle: 'Brand Visualisation',
+    desc: 'Building creative direction and a cohesive visual identity.',
+    metric: 'Concept to Identity',
+    tags: ['#CreativeDirection', '#LogoDesign', '#ColourPalette']
   },
   {
     icon: Box,
-    title: 'CMF & Substrate Specification',
-    subtitle: 'Tactile Material Engineering',
-    desc: 'Specified 350–400 GSM FSC-certified virgin unbleached folding boxboard. Calculated caliper thickness and aligned machine grain direction parallel to main carton creases to prevent spine cracking.',
-    metric: '350–400 GSM',
-    tags: ['FSC Virgin Board', 'Grain Direction', 'Anti-Cracking Score']
+    title: 'Design & Execution',
+    subtitle: 'Visual Design',
+    desc: 'Developing packaging, labels, and supporting digital assets.',
+    metric: 'Brand & Packaging',
+    tags: ['#PackagingDesign', '#ProductImagery', '#DigitalAssets']
   },
   {
-    icon: Palette,
-    title: 'Color Systems & Press Feasibility',
-    subtitle: 'Chromatics & Press Registration',
-    desc: 'Formulated primary cosmetic plum (#4A152E) and auxiliary pastel accents with calibrated Pantone Solid Coated references. Formulated ink drawdowns validated under standard D65 daylight matching.',
-    metric: 'D65 Daylight Calibrated',
-    tags: ['Spot Color Formulations', 'Ink Drawdowns', '0.1mm Plate Tolerance']
-  },
-  {
-    icon: Compass,
-    title: 'Physical Workshop Prototyping',
-    subtitle: 'Hands-On Structural Validation',
-    desc: 'Constructed 12 full-scale physical workshop mockups to empirically test hinge durability, opening resistance, bottle insertion clearance, and tactile finger-friction during real-world unboxing.',
-    metric: '12 Studio Test Protos',
-    tags: ['Flatbed Cutter Scoring', 'Caliper Verification', 'Drop & Durability Tests']
+    icon: FileCheck,
+    title: 'Print Production',
+    subtitle: 'Artwork & Vendor Coordination',
+    desc: 'Preparing print-ready artwork and coordinating with vendors for production.',
+    metric: 'Production Ready',
+    tags: ['#Prepress', '#FinalArtwork', '#VendorCoordination']
   }
 ];
 
@@ -134,26 +133,26 @@ export default function DesignerSkillsSection() {
               </span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl text-stone-950 font-normal tracking-tight">
-              Tools, Software & <br />
-              <span className="italic font-serif text-[#4A152E]">Packaging Engineering Skills</span>.
+              Creative Tools & <br />
+              <span className="italic font-serif text-[#4A152E]">Design Expertise</span>.
             </h2>
           </div>
           <p className="text-stone-600 font-sans text-sm md:text-base max-w-md leading-relaxed font-light">
-            Engineered by Vidushi Mewara. An integrated industrial design methodology bridging virtual 3D kinematics, precision CAD dielines, material science, and hands-on structural workshop prototyping.
+            From brand visualisation to final packaging artwork, combining creative thinking with digital design and production skills.
           </p>
         </div>
 
-        {/* Part 1: Software & Digital Tools Suite */}
+        {/* Part 1: Software & Digital Production Tools */}
         <div className={`mb-16 reveal-fade-up ${isInView ? 'is-revealed' : ''}`}>
           <div className="flex items-center justify-between pb-4 mb-8 border-b border-[#E2DFD7]/80">
             <div className="flex items-center gap-2">
               <Cpu className="w-4 h-4 text-[#4A152E] animate-pulse-dot" />
               <span className="font-mono text-xs text-stone-900 uppercase tracking-widest font-semibold">
-                Digital Production Software Stack
+                Software & Digital Production Tools
               </span>
             </div>
             <span className="font-mono text-[10px] text-stone-500 uppercase tracking-wider">
-              Virtual Prototyping & CAD Precision
+              Digital Design Pipeline
             </span>
           </div>
 
@@ -230,17 +229,17 @@ export default function DesignerSkillsSection() {
           </div>
         </div>
 
-        {/* Part 2: Industrial & Packaging Design Skills */}
+        {/* Part 2: Design Expertise */}
         <div className={`reveal-fade-up ${isInView ? 'is-revealed' : ''}`}>
           <div className="flex items-center justify-between pb-4 mb-8 border-b border-[#E2DFD7]/80">
             <div className="flex items-center gap-2">
               <Layers className="w-4 h-4 text-[#4A152E]" />
               <span className="font-mono text-xs text-stone-900 uppercase tracking-widest font-semibold">
-                Packaging Design & Engineering Disciplines
+                Design Expertise
               </span>
             </div>
             <span className="font-mono text-[10px] text-stone-500 uppercase tracking-wider">
-              Empirical Structural Validation
+              From Concept to Production
             </span>
           </div>
 

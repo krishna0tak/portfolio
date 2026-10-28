@@ -5,34 +5,30 @@ import page3 from '../assets/ideation_extracted/page_3.png';
 
 const HARMONIC_PALETTE = [
   {
-    name: 'Cosmetic Plum',
-    hex: '#4A152E',
-    pantone: 'PANTONE 7428 C',
-    cmyk: 'C35 M95 Y40 K55',
+    name: 'Final Brand Colour 1',
+    hex: 'HEX TBC',
+    displayHex: 'TO BE CONFIRMED',
     bg: 'bg-[#4A152E]',
     textColor: 'text-white'
   },
   {
-    name: 'Baby Sky',
-    hex: '#B8D7E8',
-    pantone: 'PANTONE 2905 C',
-    cmyk: 'C28 M7 Y3 K0',
+    name: 'Final Brand Colour 2',
+    hex: 'HEX TBC',
+    displayHex: 'TO BE CONFIRMED',
     bg: 'bg-[#B8D7E8]',
     textColor: 'text-stone-900'
   },
   {
-    name: 'Blush Pink',
-    hex: '#E8C2D0',
-    pantone: 'PANTONE 706 C',
-    cmyk: 'C6 M26 Y9 K0',
+    name: 'Final Brand Colour 3',
+    hex: 'HEX TBC',
+    displayHex: 'TO BE CONFIRMED',
     bg: 'bg-[#E8C2D0]',
     textColor: 'text-stone-900'
   },
   {
-    name: 'Warm Stone',
-    hex: '#F7F6F3',
-    pantone: 'PANTONE 7527 C',
-    cmyk: 'C2 M2 Y4 K0',
+    name: 'Final Brand Colour 4',
+    hex: 'HEX TBC',
+    displayHex: 'TO BE CONFIRMED',
     bg: 'bg-[#F7F6F3]',
     textColor: 'text-stone-900'
   },
@@ -43,11 +39,11 @@ export default function BrainstormSection() {
   const [copiedHex, setCopiedHex] = useState(null);
   const [sectionRef, isInView] = useInView({ threshold: 0.1, triggerOnce: true });
 
-  const handleCopyHex = (hex) => {
+  const handleCopyHex = (colorName) => {
     if (navigator?.clipboard?.writeText) {
-      navigator.clipboard.writeText(hex);
+      navigator.clipboard.writeText("HEX TO BE CONFIRMED");
     }
-    setCopiedHex(hex);
+    setCopiedHex(colorName);
     setTimeout(() => setCopiedHex(null), 1800);
   };
 
@@ -69,12 +65,9 @@ export default function BrainstormSection() {
               <h2 className="font-serif text-4xl sm:text-6xl text-stone-950 tracking-wider uppercase font-semibold leading-none group-hover:text-[#4A152E] transition-colors duration-300">
                 CAMEÓLA
               </h2>
-              <span className="font-serif text-xl sm:text-2xl italic font-light text-[#4A152E] tracking-widest pl-1 -mt-1 sm:-mt-2">
-                Paris
-              </span>
             </div>
             <p className="text-xs font-mono text-stone-500 uppercase tracking-widest pt-1">
-              HAUTE-COSMÉTIQUE LOGOTYPE // PACKAGING EMBOSSING VECTOR
+              CUSTOM WORDMARK // LUXURY SKINCARE IDENTITY
             </p>
           </div>
 
@@ -84,10 +77,10 @@ export default function BrainstormSection() {
             </div>
             <div className="text-left">
               <span className="font-mono text-[10px] text-stone-400 uppercase tracking-wider block">
-                PACKAGING MONOGRAM
+                [C] BRAND MONOGRAM
               </span>
               <span className="font-mono text-xs text-stone-800 font-medium">
-                CAMÉLIA ÉLÉGANCE
+                VISUAL IDENTITY
               </span>
             </div>
           </div>
@@ -100,11 +93,11 @@ export default function BrainstormSection() {
               <div className="flex items-center gap-2 mb-1">
                 <Sparkles className="w-4 h-4 text-[#4A152E] animate-pulse-dot" />
                 <span className="font-mono text-xs text-[#4A152E] uppercase tracking-widest font-semibold">
-                  CURATED AESTHETIC DIRECTION
+                  CREATIVE DIRECTION
                 </span>
               </div>
               <h3 className="font-serif text-2xl sm:text-3xl text-stone-950 font-normal">
-                Brand Mood Board & Design Essence
+                Understated Luxury
               </h3>
             </div>
             <div className="flex items-center gap-3 flex-wrap">
@@ -145,13 +138,13 @@ export default function BrainstormSection() {
             <div className="lg:col-span-4 space-y-6">
               <div>
                 <span className="font-mono text-[10px] text-stone-400 uppercase tracking-widest block mb-1">
-                  VISUAL ESSENCE & ARCHITECTURAL INSPIRATION
+                  VISUAL EXPLORATION & INSPIRATION
                 </span>
                 <h4 className="font-serif text-xl sm:text-2xl text-stone-950 font-normal leading-tight">
-                  Tactile Softness & Botanical Geometry
+                  Softness Meets Sophistication
                 </h4>
                 <p className="text-stone-600 text-xs sm:text-sm font-sans font-light leading-relaxed mt-2">
-                  Curated aesthetic moodboard establishing the sensory contrast: the architectural purity of Parisian stone facades paired with the soft, organic folds of the Camellia blossom.
+                  Understated luxury, inspired by French elegance and natural beauty.
                 </p>
               </div>
 
@@ -159,24 +152,24 @@ export default function BrainstormSection() {
               <div className="space-y-2.5 pt-2 border-t border-[#E2DFD7]">
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-xs text-stone-800 uppercase tracking-wider font-semibold">
-                    Harmonic Color System
+                    Harmonic Color Palette
                   </span>
                   <span className="font-mono text-[9px] text-stone-400 uppercase">
                     CLICK TO COPY HEX
                   </span>
                 </div>
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 gap-2">
                   {HARMONIC_PALETTE.map((c) => {
-                    const isCopied = copiedHex === c.hex;
+                    const isCopied = copiedHex === c.name;
                     return (
                       <button
-                        key={c.hex}
-                        onClick={() => handleCopyHex(c.hex)}
-                        title={`Click to copy ${c.hex} (${c.pantone})`}
-                        className="group relative space-y-1 text-center cursor-pointer p-1 rounded-none border border-transparent hover:border-stone-300 hover:bg-white transition-all duration-200"
+                        key={c.name}
+                        onClick={() => handleCopyHex(c.name)}
+                        title={`Click to copy (${c.name})`}
+                        className="group relative space-y-1 text-center cursor-pointer p-1.5 rounded-none border border-transparent hover:border-stone-300 hover:bg-white transition-all duration-200"
                       >
                         <div
-                          className={`h-10 ${c.bg} border border-stone-300/80 shadow-2xs relative overflow-hidden transition-transform duration-200 group-hover:scale-105 flex items-center justify-center`}
+                          className={`h-9 ${c.bg} border border-stone-300/80 shadow-2xs relative overflow-hidden transition-transform duration-200 group-hover:scale-105 flex items-center justify-center`}
                         >
                           {/* Shimmer sweep on hover */}
                           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
@@ -190,8 +183,8 @@ export default function BrainstormSection() {
                         <span className="font-mono text-[9px] text-stone-700 block font-medium group-hover:text-[#4A152E] transition-colors truncate">
                           {c.name}
                         </span>
-                        <span className="font-mono text-[8px] text-stone-400 block group-hover:text-stone-600 transition-colors">
-                          {isCopied ? 'COPIED!' : c.hex}
+                        <span className="font-mono text-[8px] text-stone-500 block group-hover:text-stone-700 transition-colors uppercase">
+                          {isCopied ? 'COPIED!' : 'HEX TO BE CONFIRMED'}
                         </span>
                       </button>
                     );
@@ -199,13 +192,13 @@ export default function BrainstormSection() {
                 </div>
               </div>
 
-              {/* Sensory Attributes */}
+              {/* Aesthetic Vectors */}
               <div className="space-y-2 pt-2 border-t border-[#E2DFD7]">
                 <span className="font-mono text-xs text-stone-800 uppercase tracking-wider font-semibold block">
                   Aesthetic Vectors
                 </span>
                 <div className="flex flex-wrap gap-1.5 font-mono text-[10px]">
-                  {['#FrenchMinimalism', '#VelvetTouch', '#CamelliaPetal', '#NeutralSubstrates'].map((tag) => (
+                  {['#UnderstatedLuxury', '#FrenchElegance', '#TimelessBeauty', '#MinimalDesign'].map((tag) => (
                     <span
                       key={tag}
                       className="px-2 py-0.5 bg-[#EFECE6] border border-[#E2DFD7] text-stone-700 hover:border-pink-200 hover:text-[#4A152E] transition-colors"
@@ -231,19 +224,19 @@ export default function BrainstormSection() {
                 TYPOGRAPHIC HIERARCHY
               </span>
               <h4 className="font-serif text-lg text-stone-950 font-normal group-hover:text-[#4A152E] transition-colors">
-                Haute-Cosmétique Wordmark & Pairing
+                Customised Luxury Wordmark
               </h4>
               <p className="text-stone-600 text-xs font-sans font-light leading-relaxed">
-                The visual identity pairs high-contrast literary serifs with sharp italic accents. The custom diacritic 'É' was engineered with optical weight compensation to withstand hot-foil stamping, while modernist clean grotesque sans governs technical formulas with crystalline legibility.
+                Customised serif typography with a cream-smudge accent over the “é” — a subtle nod to skincare.
               </p>
             </div>
             <div className="pt-4 mt-4 border-t border-[#E2DFD7] flex items-center justify-between font-mono text-[10px] text-stone-500">
-              <span>Display: Custom French Serif</span>
-              <span className="text-[#4A152E] font-semibold">Body: Inter Tight</span>
+              <span>Custom Serif Wordmark</span>
+              <span className="text-[#4A152E] font-semibold">Refined Typography</span>
             </div>
           </div>
 
-          {/* Card 2: Color System & Printing */}
+          {/* Card 2: Chromatic Harmony */}
           <div className="bg-white border border-[#E2DFD7] p-6 flex flex-col justify-between shadow-2xs hover:border-[#4A152E]/40 hover:-translate-y-1 transition-all duration-300 group">
             <div className="space-y-3">
               <div className="w-8 h-8 bg-[#4A152E]/10 text-[#4A152E] flex items-center justify-center rounded-xs group-hover:bg-[#4A152E] group-hover:text-white transition-colors duration-300">
@@ -253,19 +246,19 @@ export default function BrainstormSection() {
                 CHROMATIC HARMONY
               </span>
               <h4 className="font-serif text-lg text-stone-950 font-normal group-hover:text-[#4A152E] transition-colors">
-                Calibrated Palette & Ink Drawdowns
+                A Distinctive Colour Language
               </h4>
               <p className="text-stone-600 text-xs font-sans font-light leading-relaxed">
-                Primary cosmetic plum anchors secondary cartons, offset by airy baby sky blue and soft blush pink accents. Calibrated under D65 standard daylight conditions to guarantee color consistency across differing paperboard absorptions.
+                Rich brown establishes the brand identity, complemented by distinctive colours across the product range.
               </p>
             </div>
             <div className="pt-4 mt-4 border-t border-[#E2DFD7] flex items-center justify-between font-mono text-[10px] text-stone-500">
-              <span>Pantone Solid Coated</span>
-              <span className="text-[#4A152E] font-semibold">D65 Press Matching</span>
+              <span>Rich Brown</span>
+              <span className="text-[#4A152E] font-semibold">Product-Specific Colours</span>
             </div>
           </div>
 
-          {/* Card 3: Substrate & Tactility */}
+          {/* Card 3: Sustainable CMF */}
           <div className="bg-white border border-[#E2DFD7] p-6 flex flex-col justify-between shadow-2xs hover:border-[#4A152E]/40 hover:-translate-y-1 transition-all duration-300 group">
             <div className="space-y-3">
               <div className="w-8 h-8 bg-[#4A152E]/10 text-[#4A152E] flex items-center justify-center rounded-xs group-hover:bg-[#4A152E] group-hover:text-white transition-colors duration-300">
@@ -275,15 +268,15 @@ export default function BrainstormSection() {
                 SUSTAINABLE CMF
               </span>
               <h4 className="font-serif text-lg text-stone-950 font-normal group-hover:text-[#4A152E] transition-colors">
-                FSC Paperboard & Velvet Aqueous Finish
+                Minimal Packaging Expression
               </h4>
               <p className="text-stone-600 text-xs font-sans font-light leading-relaxed">
-                Engineered on 350–400 GSM FSC-certified unbleached virgin paperboard. Finished with a zero-plastic velvet-touch aqueous varnish that elevates hand-feel while preserving 100% repulpability in circular waste streams.
+                Clean surfaces, bold typography, and considered colour placement create a cohesive packaging identity.
               </p>
             </div>
             <div className="pt-4 mt-4 border-t border-[#E2DFD7] flex items-center justify-between font-mono text-[10px] text-stone-500">
-              <span>350-400 GSM Virgin Board</span>
-              <span className="text-[#4A152E] font-semibold">100% Repulpable</span>
+              <span>Minimal Layouts</span>
+              <span className="text-[#4A152E] font-semibold">Consistent Visual Language</span>
             </div>
           </div>
         </div>
