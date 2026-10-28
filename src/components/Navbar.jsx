@@ -14,11 +14,10 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { label: '3D Scroll', href: '#animation' },
-    { label: 'Overview', href: '#overview' },
-    { label: 'Mood Board', href: '#theory' },
-    { label: 'Showcase', href: '#packaging-suite' },
-    { label: 'Tools & Skills', href: '#tools-skills' },
+    { label: '01. Brief', href: '#overview' },
+    { label: '02. Identity', href: '#theory' },
+    { label: '03. Packaging Suite', href: '#packaging-suite' },
+    { label: '04. Toolkit', href: '#tools-skills' },
   ];
 
   return (
@@ -40,7 +39,7 @@ export default function Navbar() {
               VIDUSHI <span className="font-light italic text-[#4A152E]">Mewara</span>
             </span>
             <span className="text-[9px] uppercase tracking-widest text-stone-500 font-mono -mt-0.5 hidden sm:inline-block">
-              DESIGN CASE STUDY // CAMEÓLA
+              SOLE BRAND & PACKAGING DESIGNER // CAMEÓLA
             </span>
           </div>
         </a>
@@ -64,7 +63,7 @@ export default function Navbar() {
             href="#packaging-suite"
             className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#4A152E] hover:bg-[#381023] text-white text-xs font-mono uppercase tracking-wider transition-all duration-200 shadow-xs group"
           >
-            <span>11 SKUs</span>
+            <span>11 Products Designed</span>
             <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
         </div>

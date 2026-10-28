@@ -21,32 +21,40 @@ export default function Footer() {
                   VIDUSHI <span className="font-light italic text-pink-300">Mewara</span>
                 </span>
                 <span className="font-mono text-[9px] text-stone-400 uppercase tracking-widest -mt-0.5">
-                  INDUSTRIAL & PACKAGING DESIGNER
+                  Graphic Designer | Brand Identity & Packaging Design
+                </span>
+                <span className="font-mono text-[9px] text-pink-300 uppercase tracking-widest mt-0.5">
+                  NIFT Graduate | 4 Years of Experience
                 </span>
               </div>
             </div>
 
-            <p className="text-stone-400 text-xs font-sans font-light max-w-md leading-relaxed">
-              Case Study: CAMEÓLA Paris Luxury Packaging System. Exploring the convergence of zero-glue folding carton origami, FSC virgin paperboard tension, and classical French typography. Designed to eliminate toxic adhesives without diminishing the ritualistic luxury of cosmetic unboxing.
+            <p className="text-stone-300 text-xs font-sans font-light max-w-md leading-relaxed">
+              From concept to execution, I create thoughtful brand identities, packaging, and visual experiences.
             </p>
 
-            <div className="pt-2 flex flex-wrap gap-3 font-mono text-[11px]">
+            <div className="pt-2 flex flex-wrap items-center gap-3 font-mono text-[11px]">
               <a
-                href="/src/assets/Ideation story.pdf"
-                download="Vidushi_Mewara_CAMEOLA_Ideation_Story.pdf"
-                className="text-pink-300 hover:text-white underline underline-offset-4 flex items-center gap-1.5"
+                href="#contact"
+                onClick={(e) => { e.preventDefault(); alert("Resume link will be configured by Vidushi Mewara"); }}
+                className="text-pink-300 hover:text-white underline underline-offset-4 flex items-center gap-1 cursor-pointer"
               >
-                <FileText className="w-3.5 h-3.5" />
-                <span>Download Ideation Story (PDF)</span>
+                <span>View My Resume ↗</span>
               </a>
               <span className="text-stone-600">•</span>
               <a
-                href="/src/assets/Product packaging.zip"
-                download="Vidushi_Mewara_CAMEOLA_Packaging_Suite.zip"
-                className="text-pink-300 hover:text-white underline underline-offset-4 flex items-center gap-1.5"
+                href="#behance"
+                onClick={(e) => { e.preventDefault(); alert("Behance portfolio link will be configured by Vidushi Mewara"); }}
+                className="text-pink-300 hover:text-white underline underline-offset-4 flex items-center gap-1 cursor-pointer"
               >
-                <Layers className="w-3.5 h-3.5" />
-                <span>Download Packaging Suite (ZIP)</span>
+                <span>Explore My Behance ↗</span>
+              </a>
+              <span className="text-stone-600">•</span>
+              <a
+                href="mailto:vidushimewara@gmail.com"
+                className="text-pink-300 hover:text-white underline underline-offset-4 flex items-center gap-1"
+              >
+                <span>Let's Connect ↗</span>
               </a>
             </div>
           </div>
@@ -58,19 +66,16 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 font-sans text-xs text-stone-300">
               <li>
-                <a href="#animation" className="hover:text-pink-300 transition-colors">01. 3D Kinematics Study</a>
+                <a href="#overview" className="hover:text-pink-300 transition-colors">01. Brief</a>
               </li>
               <li>
-                <a href="#overview" className="hover:text-pink-300 transition-colors">02. Design Challenge & Brief</a>
+                <a href="#theory" className="hover:text-pink-300 transition-colors">02. Identity</a>
               </li>
               <li>
-                <a href="#theory" className="hover:text-pink-300 transition-colors">03. Brand Logo & Mood Board</a>
+                <a href="#packaging-suite" className="hover:text-pink-300 transition-colors">03. Packaging Suite</a>
               </li>
               <li>
-                <a href="#packaging-suite" className="hover:text-pink-300 transition-colors">04. 11-SKU Interactive Showcase</a>
-              </li>
-              <li>
-                <a href="#tools-skills" className="hover:text-pink-300 transition-colors">05. Designer Tools & Implemented Skills</a>
+                <a href="#tools-skills" className="hover:text-pink-300 transition-colors">04. Toolkit</a>
               </li>
             </ul>
           </div>
@@ -82,11 +87,12 @@ export default function Footer() {
             </h4>
             <div className="text-xs font-mono text-stone-400 space-y-1.5">
               <p>DESIGNER: VIDUSHI MEWARA</p>
+              <p>ROLE: SOLE BRAND & PACKAGING DESIGNER</p>
+              <p>QUALIFICATION: NIFT GRADUATE</p>
+              <p>EXPERIENCE: 4 YEARS OF EXPERIENCE</p>
               <p>SUBJECT: CAMEÓLA PARIS SYSTEM</p>
-              <p>SCOPE: 11 PACKAGING SKUS + 5-PAGE DECK</p>
-              <p>WORKSHOP: 12 STUDIO TEST CAPTURES</p>
-              <p>SOFTWARE: BLENDER / THREE.JS / CAD</p>
-              <p className="text-pink-300 pt-1">STATUS: VERIFIED DESIGN DOSSIER</p>
+              <p>DELIVERABLES: 11 PACKAGING SKUS</p>
+              <p className="text-pink-300 pt-1">STATUS: VERIFIED DESIGN PORTFOLIO</p>
             </div>
           </div>
         </div>
@@ -94,7 +100,7 @@ export default function Footer() {
         {/* Bottom Colophon Row */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-stone-500">
           <div>
-            © {new Date().getFullYear()} VIDUSHI MEWARA — INDUSTRIAL & PACKAGING DESIGN CASE STUDY.
+            © {new Date().getFullYear()} VIDUSHI MEWARA — BRAND IDENTITY & PACKAGING DESIGN.
           </div>
           <button
             onClick={scrollToTop}

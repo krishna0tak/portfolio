@@ -7,49 +7,49 @@ const DESIGN_PROCESS_STEPS = [
     step: '01',
     title: 'Brief & Discovery',
     category: 'Foundations',
-    desc: 'Establishing brand values, French cosmetic heritage, and the primary mandate for fragrance-free botanical purity.',
+    desc: 'Understanding the brand vision, skincare positioning, and project requirements.',
   },
   {
     step: '02',
-    title: 'Market & Archetype Research',
-    category: 'Strategy',
-    desc: 'Auditing luxury cosmetic packaging waste, unboxing rituals, and defining gender-neutral architectural aesthetics.',
+    title: 'Research & Inspiration',
+    category: 'Research',
+    desc: 'Exploring luxury skincare identities, visual references, and creative directions.',
   },
   {
     step: '03',
-    title: 'Form & Petal Ideation',
-    category: 'Industrial Design',
-    desc: 'Translating Camellia blossom geometry into ergonomic bottle contours, plunger angles, and tactile carton proportions.',
+    title: 'Brand Visualisation',
+    category: 'Ideation',
+    desc: 'Developing initial concepts, moodboards, and logo explorations.',
   },
   {
     step: '04',
-    title: 'Substrate & CMF Studies',
-    category: 'Color & Material',
-    desc: 'Formulating pigment ratios for Baby Sky Blue and Soft Blush Pink on high-caliper FSC virgin paperboard under D65 daylight.',
+    title: 'Visual Identity Development',
+    category: 'Visual Identity',
+    desc: 'Refining the custom wordmark, colour palette, and typography.',
   },
   {
     step: '05',
-    title: 'CAD & Dieline Engineering',
-    category: 'Packaging Engineering',
-    desc: 'Drafting 11 zero-glue folding carton vector templates with precision 15° friction-fit locking ears and zero adhesive.',
+    title: 'Packaging Design',
+    category: 'Packaging',
+    desc: 'Creating a cohesive label and packaging system across 11 products.',
   },
   {
     step: '06',
-    title: 'Physical Workshop Testing',
-    category: 'Prototyping',
-    desc: '1:1 scale paperboard stress testing: calibrating caliper (350 vs 400 GSM), scoring rule depths, and grain alignment.',
+    title: 'Design Refinement',
+    category: 'Refinement',
+    desc: 'Refining layouts, typography, colours, and packaging artwork.',
   },
   {
     step: '07',
-    title: '3D Kinematics & CGI',
-    category: 'Visualization',
-    desc: '299-frame interactive unboxing choreography rendered in Blender Cycles with specular roughness calibration.',
+    title: 'Digital Brand Assets',
+    category: 'Digital Assets',
+    desc: 'Designing product imagery, website sliders, and social media creatives.',
   },
   {
     step: '08',
-    title: 'Pre-Press & Production Suite',
-    category: 'Deliverables',
-    desc: 'Final dual-panel vector dieline blueprints, spot UV coordinates, and micro-foil stamping registration tolerances.',
+    title: 'Final Artwork & Production',
+    category: 'Production',
+    desc: 'Preparing final design files and coordinating packaging production.',
   },
 ];
 
@@ -81,7 +81,7 @@ function StatCounter({ target, suffix = '', label, isInView }) {
   return (
     <div className="p-3 bg-white border border-stone-200/90 shadow-2xs hover:border-[#4A152E]/40 hover:-translate-y-0.5 transition-all duration-300">
       <div className="font-serif text-2xl md:text-3xl font-normal text-[#4A152E] tracking-tight">
-        {count}{suffix}
+        {count < 10 && target >= 1 && target < 10 ? `0${count}` : count}{suffix}
       </div>
       <div className="font-mono text-[9px] uppercase tracking-wider text-stone-500 mt-0.5">
         {label}
@@ -110,32 +110,32 @@ export default function HeroSection() {
           <div className="lg:col-span-8 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-pink-50 border border-pink-200 font-mono text-xs text-[#4A152E]">
               <Compass className="w-3.5 h-3.5 animate-pulse-dot" />
-              <span>01. THE DESIGN BRIEF & ARCHITECTURAL PROBLEM</span>
+              <span>01. THE DESIGN BRIEF & CREATIVE DIRECTION</span>
             </div>
             
             <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-stone-950 leading-[1.08] tracking-tight">
-              Engineering Tactile Luxury <br />
+              From an Idea to a <br />
               <span className="italic font-serif font-light text-[#4A152E]">
-                Through Zero-Glue Structural Origami.
+                Distinctive Skincare Identity.
               </span>
             </h2>
 
             <p className="text-base md:text-lg text-stone-600 font-sans font-light max-w-2xl leading-relaxed">
-              An exhaustive packaging architecture and industrial design case study by <strong>Vidushi Mewara</strong>. The core mandate was to conceptualize and engineer a cohesive 11-SKU identity for <strong>CAMEÓLA Paris</strong>—a clean beauty house dedicated to botanical purity without synthetic fragrance.
+              CAMEÓLA is a luxury skincare brand combining French sophistication with Indian ingredients. As the sole designer, I developed its visual identity from initial concept to packaging execution.
             </p>
 
             <p className="text-sm md:text-base text-stone-600 font-sans font-light max-w-2xl leading-relaxed">
-              Rather than defaulting to standard composite plastics and non-recyclable hot-melt adhesives typical in luxury cosmetics, this project rethinks the physical unboxing ritual entirely through sustainable FSC virgin paperboard, friction-fit locking geometry, and classical French typographic restraint.
+              The challenge was to create a premium yet distinctive identity across a diverse skincare range. Custom typography, expressive colours, and minimal packaging formed a cohesive visual system.
             </p>
 
             <div className="flex flex-wrap gap-2 pt-2">
               {[
-                '#IndustrialPackaging',
-                '#ZeroGlueDieline',
-                '#FSCPaperboard',
-                '#FrenchAestheticHeritage',
-                '#3DKinematicStudy',
-                '#MaterialTesting'
+                '#BrandIdentity',
+                '#PackagingDesign',
+                '#CreativeDirection',
+                '#LogoDesign',
+                '#VisualIdentity',
+                '#DesignProcess'
               ].map((tag) => (
                 <span
                   key={tag}
@@ -147,53 +147,53 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* WHAT WE DELIVERED // PROJECT INTRO */}
+          {/* WHAT I DELIVERED // PROJECT SCOPE */}
           <div className="lg:col-span-4 space-y-5 bg-stone-50/90 p-8 border border-stone-200 shadow-xs relative overflow-hidden group">
             {/* Minimal card accent line */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#4A152E] to-transparent opacity-60" />
 
             <div>
               <span className="font-mono text-[11px] text-stone-500 uppercase tracking-widest block mb-1">
-                PROJECT INTRO & SCOPE
+                PROJECT OVERVIEW & SCOPE
               </span>
               <h3 className="font-mono text-xs uppercase tracking-widest text-[#4A152E] font-semibold border-b border-stone-200 pb-3 flex items-center justify-between">
-                <span>WHAT WE DELIVERED</span>
-                <span className="text-[10px] text-stone-500 font-normal">VIDUSHI MEWARA</span>
+                <span>WHAT I DELIVERED</span>
+                <span className="text-[10px] text-stone-500 font-normal">BY: VIDUSHI MEWARA</span>
               </h3>
             </div>
 
             {/* Dynamic Metric Dashboard Grid */}
             <div className="grid grid-cols-2 gap-2.5 pt-1">
-              <StatCounter target={11} label="Packaging SKUs" isInView={isInView} />
-              <StatCounter target={299} label="3D Kinematic Frames" isInView={isInView} />
-              <StatCounter target={100} suffix="%" label="Zero-Glue Origami" isInView={isInView} />
-              <StatCounter target={12} label="Studio Prototypes" isInView={isInView} />
+              <StatCounter target={11} label="Product SKUs" isInView={isInView} />
+              <StatCounter target={1} label="Brand Identity" isInView={isInView} />
+              <StatCounter target={100} suffix="%" label="Design Ownership" isInView={isInView} />
+              <StatCounter target={5} label="Deliverable Categories" isInView={isInView} />
             </div>
 
             <p className="text-xs text-stone-600 font-sans leading-relaxed pt-1">
-              A comprehensive industrial and structural packaging suite engineered from conceptual ideation to production-ready vector dielines:
+              Full creative and structural design scope executed independently by Vidushi Mewara:
             </p>
 
             <div className="space-y-2.5 pt-1">
               <div className="flex items-start gap-2.5 text-xs text-stone-800">
                 <CheckCircle2 className="w-4 h-4 text-[#4A152E] shrink-0 mt-0.5" />
-                <span><strong>11 Packaging SKUs</strong> with dual-panel vector dielines (bottle wraps + outer folding boxes).</span>
+                <span><strong>1. Brand Visualisation & Creative Direction:</strong> Conceptualizing positioning and tone.</span>
               </div>
               <div className="flex items-start gap-2.5 text-xs text-stone-800">
                 <CheckCircle2 className="w-4 h-4 text-[#4A152E] shrink-0 mt-0.5" />
-                <span><strong>5-Chapter Ideation Dossier</strong> establishing brand taxonomy, diacritics, and color theory.</span>
+                <span><strong>2. Logo Design, Colour Palette & Visual Identity:</strong> Custom wordmark and design system.</span>
               </div>
               <div className="flex items-start gap-2.5 text-xs text-stone-800">
                 <CheckCircle2 className="w-4 h-4 text-[#4A152E] shrink-0 mt-0.5" />
-                <span><strong>12 Physical Studio Prototypes</strong> validating paperboard caliper, grain stress, and scoring rules.</span>
+                <span><strong>3. Label & Packaging Design:</strong> Vector dielines and carton layouts for 11 products.</span>
               </div>
               <div className="flex items-start gap-2.5 text-xs text-stone-800">
                 <CheckCircle2 className="w-4 h-4 text-[#4A152E] shrink-0 mt-0.5" />
-                <span><strong>299-Frame 3D Kinematics</strong> interactive unboxing choreography rendered in Blender.</span>
+                <span><strong>4. Website Sliders & Product Imagery:</strong> Visual mockups and banner compositions.</span>
               </div>
               <div className="flex items-start gap-2.5 text-xs text-stone-800">
                 <CheckCircle2 className="w-4 h-4 text-[#4A152E] shrink-0 mt-0.5" />
-                <span><strong>Print Finishing Matrix</strong> with spot UV coordinates and micro-foil stamping tolerances.</span>
+                <span><strong>5. Social Media Assets:</strong> Editorial campaign creatives and promotional graphics.</span>
               </div>
             </div>
           </div>
@@ -206,7 +206,7 @@ export default function HeroSection() {
               <div className="flex items-center gap-2 mb-1">
                 <span className="w-2 h-2 rounded-full bg-[#4A152E] animate-pulse-dot" />
                 <span className="font-mono text-xs uppercase tracking-widest text-[#4A152E] font-semibold">
-                  DESIGN METHODOLOGY & WORKFLOW
+                  DESIGN METHODOLOGY & WORKFLOW // 8-Phase Design Process
                 </span>
               </div>
               <h3 className="font-serif text-2xl text-stone-950 font-normal">
@@ -215,7 +215,7 @@ export default function HeroSection() {
             </div>
             <div className="flex items-center gap-2">
               <span className="font-mono text-xs text-stone-500 uppercase tracking-wider">
-                END-TO-END INDUSTRIAL EXECUTION
+                FROM CONCEPT TO EXECUTION
               </span>
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#4A152E]" />
             </div>

@@ -157,6 +157,82 @@ export default function ScrollUnboxing() {
           ref={canvasRef}
           className="w-full h-full object-contain pointer-events-none transition-opacity duration-300"
         />
+
+        {/* Frame 01 Overlay: Appears at start */}
+        <div
+          className={`absolute inset-0 flex flex-col justify-between items-center pointer-events-none px-6 py-28 transition-all duration-500 ${
+            scrollProgress < 0.22 ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'
+          }`}
+        >
+          <div className="text-center space-y-2 mt-4 max-w-xl mx-auto">
+            <span className="font-mono text-[10px] md:text-xs tracking-[0.25em] text-[#4A152E] uppercase font-semibold">
+              BRAND IDENTITY // PACKAGING DESIGN
+            </span>
+            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl tracking-tight text-stone-950 font-normal">
+              CAMEÓLA
+            </h1>
+            <p className="font-sans text-xs sm:text-sm tracking-wider uppercase text-stone-600 font-light">
+              From Concept to Creation
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center gap-2 mb-4 animate-pulse">
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-stone-500">
+              SCROLL TO EXPLORE
+            </span>
+            <div className="w-4 h-7 border border-stone-400 rounded-full flex justify-center pt-1">
+              <div className="w-1 h-2 bg-stone-700 rounded-full animate-bounce" />
+            </div>
+          </div>
+        </div>
+
+        {/* Mid-Scroll Highlights: Unfolding narrative */}
+        <div
+          className={`absolute inset-x-6 top-1/2 -translate-y-1/2 flex flex-col items-center pointer-events-none transition-all duration-500 ${
+            scrollProgress >= 0.32 && scrollProgress <= 0.68
+              ? 'opacity-100 scale-100'
+              : 'opacity-0 scale-95 pointer-events-none'
+          }`}
+        >
+          <div className="flex flex-wrap items-center justify-center gap-2.5 max-w-2xl text-center">
+            <span className="px-3.5 py-1.5 bg-white/90 backdrop-blur-md border border-stone-200/80 shadow-xs rounded-full font-mono text-[11px] text-stone-800 tracking-wider uppercase">
+              ✦ End-to-End Brand Development
+            </span>
+            <span className="px-3.5 py-1.5 bg-[#4A152E]/90 text-white backdrop-blur-md shadow-xs rounded-full font-mono text-[11px] tracking-wider uppercase">
+              ✦ French Elegance Meets Indian Heritage
+            </span>
+            <span className="px-3.5 py-1.5 bg-white/90 backdrop-blur-md border border-stone-200/80 shadow-xs rounded-full font-mono text-[11px] text-stone-800 tracking-wider uppercase">
+              ✦ A Cohesive Packaging Identity
+            </span>
+          </div>
+        </div>
+
+        {/* Final Frame CTA: Beyond the Packaging */}
+        <div
+          className={`absolute inset-0 flex flex-col justify-end items-center pointer-events-none px-6 pb-20 transition-all duration-500 ${
+            scrollProgress > 0.76 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+          }`}
+        >
+          <div className="bg-white/95 backdrop-blur-xl border border-stone-200/90 shadow-xl p-6 sm:p-8 rounded-2xl max-w-lg w-full text-center space-y-3 pointer-events-auto">
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#4A152E] font-semibold">
+              CASE STUDY PRESENTATION
+            </span>
+            <h2 className="font-serif text-2xl sm:text-3xl text-stone-950 font-normal">
+              Beyond the Packaging
+            </h2>
+            <p className="font-sans text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
+              A Creative Journey from Ideation to Execution
+            </p>
+            <div className="pt-2">
+              <a
+                href="#overview"
+                className="inline-flex items-center justify-center px-6 py-2.5 bg-[#4A152E] hover:bg-[#381023] text-white text-xs font-mono uppercase tracking-wider transition-colors duration-200 rounded-full shadow-sm"
+              >
+                Explore the Design Process ↓
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
