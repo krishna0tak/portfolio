@@ -92,7 +92,6 @@ function StatCounter({ target, suffix = '', label, isInView }) {
 
 export default function HeroSection() {
   const [sectionRef, isInView] = useInView({ threshold: 0.1, triggerOnce: true });
-  const [hoveredStep, setHoveredStep] = useState(null);
 
   return (
     <section
@@ -199,7 +198,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* 8-Card Design Process Grid */}
+        {/* 8-Phase Design Process List */}
         <div className={`pt-12 border-t border-stone-200 reveal-fade-up ${isInView ? 'is-revealed' : ''}`}>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-8 border-b border-stone-200">
             <div>
@@ -221,61 +220,30 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {DESIGN_PROCESS_STEPS.map((step, idx) => {
-              const isHovered = hoveredStep === step.step;
-              return (
-                <div
-                  key={step.step}
-                  onMouseEnter={() => setHoveredStep(step.step)}
-                  onMouseLeave={() => setHoveredStep(null)}
-                  className={`relative p-6 bg-stone-50/90 border transition-all duration-300 flex flex-col justify-between group cursor-default overflow-hidden ${
-                    isHovered
-                      ? 'border-[#4A152E] bg-white -translate-y-1.5 shadow-lg shadow-[#4A152E]/5'
-                      : 'border-stone-200 hover:border-stone-300'
-                  }`}
-                >
-                  {/* Subtle top accent bar */}
-                  <div
-                    className={`absolute top-0 left-0 right-0 h-[2px] bg-[#4A152E] transition-transform duration-300 origin-left ${
-                      isHovered ? 'scale-x-100' : 'scale-x-0'
-                    }`}
-                  />
-
-                  <div>
-                    <div className="flex items-center justify-between pb-3 mb-3 border-b border-stone-200/80">
-                      <span className={`font-mono text-sm font-bold transition-colors ${
-                        isHovered ? 'text-[#4A152E]' : 'text-stone-900'
-                      }`}>
-                        {step.step}
-                      </span>
-                      <span className="font-mono text-[10px] uppercase text-stone-500 tracking-wider">
-                        {step.category}
-                      </span>
-                    </div>
-
-                    <h4 className={`font-serif text-lg font-normal mb-2 transition-colors ${
-                      isHovered ? 'text-[#4A152E]' : 'text-stone-950'
-                    }`}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 border border-stone-200 bg-white">
+            {DESIGN_PROCESS_STEPS.map((step) => (
+              <div
+                key={step.step}
+                className="flex items-start gap-4 px-5 py-4 border-b border-stone-200/80 sm:[&:nth-child(odd)]:border-r sm:[&:nth-child(odd)]:border-stone-200/80 last:border-b-0 sm:[&:nth-child(7)]:border-b-0 group hover:bg-stone-50/60 transition-colors duration-200"
+              >
+                <span className="font-mono text-xs font-bold text-[#4A152E] shrink-0 mt-0.5 w-6">
+                  {step.step}
+                </span>
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2 mb-0.5">
+                    <h4 className="font-serif text-sm text-stone-950 font-normal leading-snug group-hover:text-[#4A152E] transition-colors">
                       {step.title}
                     </h4>
-
-                    <p className="font-sans text-xs text-stone-600 font-light leading-relaxed">
-                      {step.desc}
-                    </p>
-                  </div>
-
-                  <div className="pt-4 mt-4 border-t border-stone-200/50 flex items-center justify-between">
-                    <span className="font-mono text-[9px] uppercase tracking-widest text-stone-400 group-hover:text-stone-600 transition-colors">
-                      PHASE {step.step} / 08
+                    <span className="font-mono text-[9px] text-stone-400 uppercase tracking-wider shrink-0">
+                      {step.category}
                     </span>
-                    <div className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      isHovered ? 'bg-[#4A152E] scale-125' : 'bg-stone-300'
-                    }`} />
                   </div>
+                  <p className="font-sans text-[11px] text-stone-500 font-light leading-relaxed">
+                    {step.desc}
+                  </p>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </div>
