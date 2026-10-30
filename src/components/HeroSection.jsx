@@ -155,9 +155,8 @@ export default function HeroSection() {
               <span className="font-mono text-[11px] text-stone-500 uppercase tracking-widest block mb-1">
                 PROJECT OVERVIEW & SCOPE
               </span>
-              <h3 className="font-mono text-xs uppercase tracking-widest text-[#4A152E] font-semibold border-b border-stone-200 pb-3 flex items-center justify-between">
-                <span>WHAT I DELIVERED</span>
-                <span className="text-[10px] text-stone-500 font-normal">BY: VIDUSHI MEWARA</span>
+              <h3 className="font-mono text-xs uppercase tracking-widest text-[#4A152E] font-semibold border-b border-stone-200 pb-3">
+                WHAT I DELIVERED
               </h3>
             </div>
 
@@ -176,23 +175,23 @@ export default function HeroSection() {
             <div className="space-y-2.5 pt-1">
               <div className="flex items-start gap-2.5 text-xs text-stone-800">
                 <CheckCircle2 className="w-4 h-4 text-[#4A152E] shrink-0 mt-0.5" />
-                <span><strong>1. Brand Visualisation & Creative Direction:</strong> Conceptualizing positioning and tone.</span>
+                <span><strong>Brand Visualisation & Creative Direction:</strong> Conceptualizing positioning and tone.</span>
               </div>
               <div className="flex items-start gap-2.5 text-xs text-stone-800">
                 <CheckCircle2 className="w-4 h-4 text-[#4A152E] shrink-0 mt-0.5" />
-                <span><strong>2. Logo Design, Colour Palette & Visual Identity:</strong> Custom wordmark and design system.</span>
+                <span><strong>Logo Design, Colour Palette & Visual Identity:</strong> Custom wordmark and design system.</span>
               </div>
               <div className="flex items-start gap-2.5 text-xs text-stone-800">
                 <CheckCircle2 className="w-4 h-4 text-[#4A152E] shrink-0 mt-0.5" />
-                <span><strong>3. Label & Packaging Design:</strong> Vector dielines and carton layouts for 11 products.</span>
+                <span><strong>Label & Packaging Design:</strong> Vector dielines and carton layouts for 11 products.</span>
               </div>
               <div className="flex items-start gap-2.5 text-xs text-stone-800">
                 <CheckCircle2 className="w-4 h-4 text-[#4A152E] shrink-0 mt-0.5" />
-                <span><strong>4. Website Sliders & Product Imagery:</strong> Visual mockups and banner compositions.</span>
+                <span><strong>Website Sliders & Product Imagery:</strong> Visual mockups and banner compositions.</span>
               </div>
               <div className="flex items-start gap-2.5 text-xs text-stone-800">
                 <CheckCircle2 className="w-4 h-4 text-[#4A152E] shrink-0 mt-0.5" />
-                <span><strong>5. Social Media Assets:</strong> Editorial campaign creatives and promotional graphics.</span>
+                <span><strong>Social Media Assets:</strong> Editorial campaign creatives and promotional graphics.</span>
               </div>
             </div>
           </div>
