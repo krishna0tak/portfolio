@@ -20,7 +20,6 @@ export default function BrainstormSection() {
             <span className="font-mono text-xs text-[#4A152E] uppercase tracking-widest font-semibold block">
               03. VISUAL IDENTITY &amp; BRAND MOOD BOARD
             </span>
-            {/* Packaging Wordmark Matching the Physical Boxes */}
             <div className="inline-flex flex-col items-start select-none group cursor-default">
               <h2 className="font-serif text-4xl sm:text-6xl text-stone-950 tracking-wider uppercase font-semibold leading-none group-hover:text-[#4A152E] transition-colors duration-300">
                 CAMEÓLA
@@ -46,51 +45,42 @@ export default function BrainstormSection() {
           </div>
         </div>
 
-        {/* Brand Mood Board Showcase */}
-        <div className={`bg-white border border-[#E2DFD7] p-6 md:p-10 shadow-xs reveal-fade-up ${isInView ? 'is-revealed' : ''}`}>
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[#E2DFD7] gap-4 mb-8">
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <Sparkles className="w-4 h-4 text-[#4A152E] animate-pulse-dot" />
-                <span className="font-mono text-xs text-[#4A152E] uppercase tracking-widest font-semibold">
-                  CREATIVE DIRECTION
-                </span>
-              </div>
-              <h3 className="font-serif text-2xl sm:text-3xl text-stone-950 font-normal">
-                Understated Luxury
-              </h3>
-            </div>
-            <div className="flex items-center gap-3 flex-wrap">
-              <span className="font-mono text-[10px] text-stone-500 uppercase tracking-wider px-2.5 py-1 bg-[#EFECE6] border border-[#E2DFD7]">
-                Brand Mood Board
+        {/* Moodboard Header */}
+        <div className={`flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 reveal-fade-up ${isInView ? 'is-revealed' : ''}`}>
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              <Sparkles className="w-4 h-4 text-[#4A152E] animate-pulse-dot" />
+              <span className="font-mono text-xs text-[#4A152E] uppercase tracking-widest font-semibold">
+                CREATIVE DIRECTION
               </span>
-              <button
-                onClick={() => setLightboxImage(moodboard)}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#4A152E] text-white text-xs font-mono uppercase tracking-wider hover:bg-[#381023] hover:shadow-xs hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
-              >
-                <Maximize2 className="w-3.5 h-3.5" />
-                <span>Inspect Full Mood Board</span>
-              </button>
             </div>
+            <h3 className="font-serif text-2xl sm:text-3xl text-stone-950 font-normal">
+              Understated Luxury
+            </h3>
           </div>
+          <button
+            onClick={() => setLightboxImage(moodboard)}
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#4A152E] text-white text-xs font-mono uppercase tracking-wider hover:bg-[#381023] hover:shadow-xs hover:-translate-y-0.5 transition-all duration-200 cursor-pointer self-start sm:self-center"
+          >
+            <Maximize2 className="w-3.5 h-3.5" />
+            <span>Inspect Full Mood Board</span>
+          </button>
+        </div>
 
-          {/* Mood Board Display Stage — Full Width */}
-          <div className="bg-[#F7F6F3] p-4 sm:p-6 border border-[#E2DFD7]">
-            <div
-              className="relative group cursor-pointer overflow-hidden border border-[#E2DFD7] bg-white p-3 shadow-xs hover:border-[#4A152E]/30 transition-all duration-300"
-              onClick={() => setLightboxImage(moodboard)}
-            >
-              <img
-                src={moodboard}
-                alt="Brand Mood Board — CAMEÓLA Paris"
-                className="w-full h-auto max-h-[640px] object-contain mx-auto transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-              />
-              <div className="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="flex items-center gap-2 px-4 py-2 bg-white text-stone-950 font-mono text-xs uppercase tracking-wider shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <Maximize2 className="w-4 h-4 text-[#4A152E]" />
-                  <span>Expand Full-Res Mood Board</span>
-                </div>
-              </div>
+        {/* Moodboard Image — flat, minimal single layer */}
+        <div
+          className={`relative group cursor-pointer overflow-hidden border border-[#E2DFD7] reveal-fade-up ${isInView ? 'is-revealed' : ''}`}
+          onClick={() => setLightboxImage(moodboard)}
+        >
+          <img
+            src={moodboard}
+            alt="Brand Mood Board — CAMEÓLA Paris"
+            className="w-full h-auto max-h-[680px] object-contain mx-auto transition-transform duration-700 ease-out group-hover:scale-[1.01]"
+          />
+          <div className="absolute inset-0 bg-stone-950/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div className="flex items-center gap-2 px-4 py-2 bg-white text-stone-950 font-mono text-xs uppercase tracking-wider shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+              <Maximize2 className="w-4 h-4 text-[#4A152E]" />
+              <span>Expand Full-Res Mood Board</span>
             </div>
           </div>
         </div>

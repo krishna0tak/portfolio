@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, User, Download, FileText, Layers, ExternalLink } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-stone-800">
           {/* Designer Bio & Reflection */}
-          <div className="md:col-span-6 space-y-4">
+          <div className="md:col-span-7 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 bg-[#4A152E] text-white flex items-center justify-center font-serif text-sm font-bold">
                 VM
@@ -21,7 +21,7 @@ export default function Footer() {
                   VIDUSHI <span className="font-light italic text-pink-300">Mewara</span>
                 </span>
                 <span className="font-mono text-[9px] text-stone-400 uppercase tracking-widest -mt-0.5">
-                  Graphic Designer | Brand Identity & Packaging Design
+                  Graphic Designer | Brand Identity &amp; Packaging Design
                 </span>
                 <span className="font-mono text-[9px] text-pink-300 uppercase tracking-widest mt-0.5">
                   NIFT Graduate | 4 Years of Experience
@@ -60,7 +60,7 @@ export default function Footer() {
           </div>
 
           {/* Case Study Chapters Navigation */}
-          <div className="md:col-span-3 space-y-3">
+          <div className="md:col-span-5 space-y-3">
             <h4 className="font-mono text-xs uppercase tracking-widest text-pink-400 font-semibold">
               CASE STUDY CHAPTERS
             </h4>
@@ -79,28 +79,12 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
-          {/* Designer Credits */}
-          <div className="md:col-span-3 space-y-3">
-            <h4 className="font-mono text-xs uppercase tracking-widest text-pink-400 font-semibold">
-              DESIGNER CREDITS
-            </h4>
-            <div className="text-xs font-mono text-stone-400 space-y-1.5">
-              <p>DESIGNER: VIDUSHI MEWARA</p>
-              <p>ROLE: SOLE BRAND & PACKAGING DESIGNER</p>
-              <p>QUALIFICATION: NIFT GRADUATE</p>
-              <p>EXPERIENCE: 4 YEARS OF EXPERIENCE</p>
-              <p>SUBJECT: CAMEÓLA PARIS SYSTEM</p>
-              <p>DELIVERABLES: 11 PACKAGING SKUS</p>
-              <p className="text-pink-300 pt-1">STATUS: VERIFIED DESIGN PORTFOLIO</p>
-            </div>
-          </div>
         </div>
 
         {/* Bottom Colophon Row */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-stone-500">
           <div>
-            © {new Date().getFullYear()} VIDUSHI MEWARA — BRAND IDENTITY & PACKAGING DESIGN.
+            © {new Date().getFullYear()} VIDUSHI MEWARA — BRAND IDENTITY &amp; PACKAGING DESIGN.
           </div>
           <button
             onClick={scrollToTop}
