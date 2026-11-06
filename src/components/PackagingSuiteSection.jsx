@@ -53,40 +53,40 @@ import luxeSolaireP1 from '../assets/packaging_extracted_png/luxe solaire Sunscr
 import luxeSolaireP2 from '../assets/packaging_extracted_png/luxe solaire Sunscreen_page_2.png';
 
 // ==========================================
-// 2. PHYSICAL STUDIO PROTOTYPE CAPTURES (1-to-1 Verified)
+// 2. PHYSICAL STUDIO PROTOTYPE CAPTURES (1-to-1 Verified Square Assets)
 // ==========================================
-// Celestial Glow Brightening Serum: 30ml dropper + golden carton with water droplets
-import celestialGlowPhoto from '../assets/WhatsApp Image 2026-09-22 at 11.57.52 (2).jpeg';
+// Celestial Glow Brightening Serum: 30ml dropper + golden carton (1:1 Centered)
+import celestialGlowPhoto from '../assets/sku1-celestial-glow-square.jpg';
 
-// Water Pearl Hydrating Serum: 30ml dropper + mocha carton & marble pebble angle
-import waterPearlPhoto1 from '../assets/WhatsApp Image 2026-09-22 at 11.57.51 (1).jpeg';
+// Water Pearl Hydrating Serum: 30ml dropper + mocha carton & marble pebble (1:1 Centered)
+import waterPearlPhoto1 from '../assets/sku2-water-pearl-square.jpg';
 import waterPearlPhoto2 from '../assets/WhatsApp Image 2026-09-22 at 11.57.52 (3).jpeg';
 
-// Crystal Dew Micro-Exfoliating Scrub: Teal carton + open jar with crystalline quartz scrub
+// Crystal Dew Micro-Exfoliating Scrub: Teal carton + open jar with crystalline quartz scrub (1:1 Square)
 import crystalDewPhoto from '../assets/WhatsApp Image 2026-09-22 at 12.00.54 (2).jpeg';
 
-// Lustre Hydration Exfoliating Scrub: Mauve/pink carton + closed jar & open pink scrub texture
-import lustreScrubPhoto1 from '../assets/WhatsApp Image 2026-09-22 at 12.00.54.jpeg';
+// Lustre Hydration Exfoliating Scrub: Mauve/pink carton + closed jar & open pink scrub (1:1 Square)
+import lustreScrubPhoto1 from '../assets/sku4-lustre-scrub-square.jpg';
 import lustreScrubPhoto2 from '../assets/WhatsApp Image 2026-09-22 at 12.00.54 (1).jpeg';
 
-// Sebum Control Clarity Scrub: Charcoal carton + wide 100gm jar
+// Sebum Control Clarity Scrub: Charcoal carton + wide 100gm jar (1:1 Square)
 import sebumScrubPhoto from '../assets/WhatsApp Image 2026-09-22 at 11.57.51 (2).jpeg';
 
-// Hydration Divine Face Moisture Cream: Dark teal carton + 50ml barrier pump bottle
-import hydrationDivinePhoto from '../assets/WhatsApp Image 2026-09-22 at 11.57.50.jpeg';
+// Hydration Divine Face Moisture Cream: Dark teal carton + 50ml barrier pump bottle (1:1 Square)
+import hydrationDivinePhoto from '../assets/sku6-hydration-divine-square.jpg';
 
-// Luminous Hydrating Facial Mist: Rose box + 100ml spray bottle with mist droplets & horizontal
+// Luminous Hydrating Facial Mist: Rose box + 100ml spray bottle with mist droplets (1:1 Square)
 import mistSpray1 from '../assets/WhatsApp Image 2026-09-22 at 11.57.51.jpeg';
 import mistSpray2 from '../assets/WhatsApp Image 2026-09-22 at 11.57.50 (1).jpeg';
 
-// Luxe Solaire Invisible Sunscreen SPF50+: Sunset orange carton + 50ml bottle & pump texture
-import luxeSolairePhoto1 from '../assets/WhatsApp Image 2026-09-22 at 11.57.52.jpeg';
+// Luxe Solaire Invisible Sunscreen SPF50+: Sunset orange carton + 50ml bottle (1:1 Centered)
+import luxeSolairePhoto1 from '../assets/sku11-luxe-solaire-square.jpg';
 import luxeSolairePhoto2 from '../assets/WhatsApp Image 2026-09-22 at 11.57.52 (1).jpeg';
 
-// Physical 3D Prototype Captures (Cropped & Fitted)
-import sublimeCreamPhoto from '../assets/sublime-cream-prototype.jpg';
-import persianGlowPhoto from '../assets/parisian-glow-prototype.jpg';
-import radianceRevealedPhoto from '../assets/radiance-revealed-prototype.jpg';
+// Physical 3D Prototype Captures (1:1 Square Balanced)
+import sublimeCreamPhoto from '../assets/sku7-sublime-cream-square.jpg';
+import persianGlowPhoto from '../assets/sku8-persian-glow-square.jpg';
+import radianceRevealedPhoto from '../assets/sku9-radiance-revealed-square.jpg';
 
 // ==========================================
 // 3. MASTER PACKAGING SKU CATALOGUE (EXACT 1-TO-1 MAPPING)
@@ -353,12 +353,12 @@ export default function PackagingSuiteSection() {
                   />
                 </div>
 
-                {/* Hover Reveal Image: Exact Matching Physical Product Capture (Full Square Fit) */}
-                <div className="absolute inset-0 z-20 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-out flex items-center justify-center overflow-hidden">
+                {/* Hover Reveal Image: Exact Matching Physical Product Capture (1-to-1 Square Fit) */}
+                <div className="absolute inset-0 z-20 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-out flex items-center justify-center p-2 overflow-hidden">
                   <img
                     src={sku.productImage}
                     alt={sku.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
 
