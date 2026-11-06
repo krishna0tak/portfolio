@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import {
   Layers,
   Eye,
   Maximize2,
-  Filter,
   Package,
   FileText,
   CheckCircle2,
@@ -257,25 +256,10 @@ const PACKAGING_SKUS = [
   },
 ];
 
-const CATEGORIES = [
-  'All (11 SKUs)',
-  'Serums & Treatments',
-  'Exfoliators & Scrubs',
-  'Moisturizers & Creams',
-  'Cleansers & Facewash',
-  'Mists & Sun Protection',
-];
-
 export default function PackagingSuiteSection() {
-  const [activeCategory, setActiveCategory] = useState('All (11 SKUs)');
   const [selectedSku, setSelectedSku] = useState(null);
   const [selectedAltAngle, setSelectedAltAngle] = useState(false);
   const [zoomAsset, setZoomAsset] = useState(null); // 'front' | 'product' | 'box' | null
-
-  const filteredSkus =
-    activeCategory === 'All (11 SKUs)'
-      ? PACKAGING_SKUS
-      : PACKAGING_SKUS.filter((sku) => sku.category === activeCategory);
 
   // Keyboard navigation for modal
   useEffect(() => {
@@ -288,21 +272,21 @@ export default function PackagingSuiteSection() {
           setSelectedSku(null);
         }
       } else if (e.key === 'ArrowRight' && !zoomAsset) {
-        const currentIndex = filteredSkus.findIndex((s) => s.id === selectedSku.id);
-        const nextIndex = (currentIndex + 1) % filteredSkus.length;
-        setSelectedSku(filteredSkus[nextIndex]);
+        const currentIndex = PACKAGING_SKUS.findIndex((s) => s.id === selectedSku.id);
+        const nextIndex = (currentIndex + 1) % PACKAGING_SKUS.length;
+        setSelectedSku(PACKAGING_SKUS[nextIndex]);
         setSelectedAltAngle(false);
       } else if (e.key === 'ArrowLeft' && !zoomAsset) {
-        const currentIndex = filteredSkus.findIndex((s) => s.id === selectedSku.id);
-        const prevIndex = (currentIndex - 1 + filteredSkus.length) % filteredSkus.length;
-        setSelectedSku(filteredSkus[prevIndex]);
+        const currentIndex = PACKAGING_SKUS.findIndex((s) => s.id === selectedSku.id);
+        const prevIndex = (currentIndex - 1 + PACKAGING_SKUS.length) % PACKAGING_SKUS.length;
+        setSelectedSku(PACKAGING_SKUS[prevIndex]);
         setSelectedAltAngle(false);
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedSku, filteredSkus, zoomAsset]);
+  }, [selectedSku, PACKAGING_SKUS, zoomAsset]);
 
   const openSkuModal = (sku) => {
     setSelectedSku(sku);
@@ -344,30 +328,9 @@ export default function PackagingSuiteSection() {
           </div>
         </div>
 
-        {/* Category Filters */}
-        <div className={`flex flex-wrap items-center gap-2 mb-12 pb-4 border-b border-[#E2DFD7] reveal-fade-up ${isInView ? 'is-revealed' : ''}`}>
-          <span className="font-mono text-xs text-stone-500 uppercase tracking-widest mr-2 flex items-center gap-1.5">
-            <Filter className="w-3.5 h-3.5 text-[#4A152E]" />
-            Filter Range:
-          </span>
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 font-mono text-xs uppercase tracking-wider transition-all duration-200 cursor-pointer ${
-                activeCategory === cat
-                  ? 'bg-[#4A152E] text-white shadow-xs'
-                  : 'bg-white text-stone-700 border border-[#E2DFD7] hover:border-[#4A152E] hover:text-[#4A152E]'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
         {/* 11-SKU Interactive Showcase Grid */}
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-fade-up ${isInView ? 'is-revealed' : ''}`}>
-          {filteredSkus.map((sku) => (
+          {PACKAGING_SKUS.map((sku) => (
             <div
               key={sku.id}
               onClick={() => openSkuModal(sku)}
@@ -500,9 +463,9 @@ export default function PackagingSuiteSection() {
               <div className="flex items-center gap-2 self-end sm:self-center">
                 <button
                   onClick={() => {
-                    const currentIndex = filteredSkus.findIndex((s) => s.id === selectedSku.id);
-                    const prevIndex = (currentIndex - 1 + filteredSkus.length) % filteredSkus.length;
-                    setSelectedSku(filteredSkus[prevIndex]);
+                    const currentIndex = PACKAGING_SKUS.findIndex((s) => s.id === selectedSku.id);
+                    const prevIndex = (currentIndex - 1 + PACKAGING_SKUS.length) % PACKAGING_SKUS.length;
+                    setSelectedSku(PACKAGING_SKUS[prevIndex]);
                     setSelectedAltAngle(false);
                     setZoomAsset(null);
                   }}
@@ -515,9 +478,9 @@ export default function PackagingSuiteSection() {
 
                 <button
                   onClick={() => {
-                    const currentIndex = filteredSkus.findIndex((s) => s.id === selectedSku.id);
-                    const nextIndex = (currentIndex + 1) % filteredSkus.length;
-                    setSelectedSku(filteredSkus[nextIndex]);
+                    const currentIndex = PACKAGING_SKUS.findIndex((s) => s.id === selectedSku.id);
+                    const nextIndex = (currentIndex + 1) % PACKAGING_SKUS.length;
+                    setSelectedSku(PACKAGING_SKUS[nextIndex]);
                     setSelectedAltAngle(false);
                     setZoomAsset(null);
                   }}
