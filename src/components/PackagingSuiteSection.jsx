@@ -326,7 +326,7 @@ export default function PackagingSuiteSection() {
             </p>
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#4A152E]/10 border border-[#4A152E]/20 text-[#4A152E] font-mono text-[11px] uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5 animate-pulse-dot" />
-              <span>Click any card to open the 3-asset triad</span>
+              <span>Click any card to inspect the 3 images</span>
             </div>
           </div>
         </div>
@@ -340,51 +340,26 @@ export default function PackagingSuiteSection() {
               className="bg-white border border-[#E2DFD7] overflow-hidden group cursor-pointer shadow-xs hover:border-[#4A152E]/50 hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               {/* Interactive Thumbnail Stage: Front Dieline (Default) ➔ Product Capture (Hover) */}
-              <div className="relative overflow-hidden bg-gradient-to-b from-[#FAF9F6] to-[#ECEAE4] min-h-[340px] flex items-center justify-center p-6 border-b border-[#E2DFD7]/80">
+              <div className="relative overflow-hidden aspect-square w-full bg-gradient-to-b from-[#FAF9F6] to-[#ECEAE4] border-b border-[#E2DFD7]/80 flex items-center justify-center">
                 {/* Subtle Background Pattern */}
                 <div className="absolute inset-0 opacity-40 bg-[radial-gradient(#d1cfc7_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
 
                 {/* Default Image: Front Panel / Primary Label Dieline */}
-                <div className="relative z-10 w-full h-full flex items-center justify-center transition-all duration-500 group-hover:opacity-0 group-hover:scale-95">
+                <div className="relative z-10 w-full h-full flex items-center justify-center p-6 transition-all duration-500 group-hover:opacity-0 group-hover:scale-95">
                   <img
                     src={sku.frontImage}
                     alt={`${sku.title} Front Panel Dieline`}
-                    className="max-w-[85%] max-h-[260px] object-contain drop-shadow-sm transition-transform duration-500 group-hover:scale-105"
+                    className="max-w-[85%] max-h-[85%] object-contain drop-shadow-sm transition-transform duration-500 group-hover:scale-105"
                   />
-                  {/* Default State Badge */}
-                  <div className="absolute top-0 left-0 px-2.5 py-1 bg-white/95 backdrop-blur-xs font-mono text-[10px] text-[#4A152E] uppercase tracking-wider border border-[#E2DFD7] flex items-center gap-1.5 shadow-2xs">
-                    <FileText className="w-3 h-3 text-[#4A152E]" />
-                    <span>01. Vector Dieline</span>
-                  </div>
                 </div>
 
-                {/* Hover Reveal Image: Exact Matching Physical Product Capture */}
-                <div className="absolute inset-0 z-20 bg-white/95 opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-out flex items-center justify-center p-4">
+                {/* Hover Reveal Image: Exact Matching Physical Product Capture (Full Square Fit) */}
+                <div className="absolute inset-0 z-20 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-out flex items-center justify-center overflow-hidden">
                   <img
                     src={sku.productImage}
-                    alt={`${sku.title} Physical Product Capture`}
-                    className="max-w-[90%] max-h-[290px] object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-md"
+                    alt={sku.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  
-                  {/* Hover Studio Badge */}
-                  <div className="absolute top-3 left-3 px-2.5 py-1 bg-[#4A152E] text-white font-mono text-[10px] uppercase tracking-wider flex items-center gap-1.5 shadow-xs">
-                    {sku.isDielineOnly ? (
-                      <>
-                        <Box className="w-3 h-3 text-pink-300" />
-                        <span>Dieline Blueprint</span>
-                      </>
-                    ) : (
-                      <>
-                        <Camera className="w-3 h-3 text-pink-300" />
-                        <span>Physical Studio Proof</span>
-                      </>
-                    )}
-                  </div>
-                </div>
-
-                {/* Volume Badge (Always Top Right) */}
-                <div className="absolute top-3 right-3 z-30 px-2.5 py-1 bg-white/90 backdrop-blur-xs font-mono text-[10px] text-stone-700 uppercase tracking-wider border border-[#E2DFD7] shadow-2xs">
-                  {sku.volume.split('+')[0].trim()}
                 </div>
 
                 {/* Bottom Inspection Prompt Overlay on Hover */}
@@ -392,7 +367,7 @@ export default function PackagingSuiteSection() {
                   <div className="flex items-center justify-between px-3 py-2 bg-[#4A152E] text-white font-mono text-[11px] uppercase tracking-wider shadow-md">
                     <span className="flex items-center gap-1.5 font-medium">
                       <Layers className="w-3.5 h-3.5 text-pink-300" />
-                      Inspect 3-Asset Triad
+                      Inspect the 3 Images
                     </span>
                     <Maximize2 className="w-3.5 h-3.5 text-pink-300" />
                   </div>
@@ -400,7 +375,7 @@ export default function PackagingSuiteSection() {
               </div>
 
               {/* Card Meta Details */}
-              <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
+              <div className="p-5 space-y-3 flex-1 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between pb-2 mb-2 border-b border-[#E2DFD7]/80">
                     <span className="font-mono text-[10px] text-[#4A152E] uppercase tracking-widest font-semibold">
@@ -411,18 +386,15 @@ export default function PackagingSuiteSection() {
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-xl text-stone-950 font-normal leading-snug group-hover:text-[#4A152E] transition-colors mb-2">
+                  <h3 className="font-serif text-xl text-stone-950 font-normal leading-snug group-hover:text-[#4A152E] transition-colors">
                     {sku.title}
                   </h3>
-                  <p className="text-xs text-stone-600 font-sans leading-relaxed line-clamp-2">
-                    {sku.desc}
-                  </p>
                 </div>
 
                 <div className="pt-3 border-t border-[#E2DFD7] flex items-center justify-between text-xs font-mono text-[#4A152E]">
                   <span className="flex items-center gap-1.5 font-semibold text-[11px]">
                     <Layers className="w-3.5 h-3.5 text-[#4A152E]" />
-                    <span>3-Asset Triad Ready</span>
+                    <span>3 Images Ready</span>
                   </span>
                   <span className="text-[11px] text-stone-500 group-hover:text-[#4A152E] flex items-center gap-1 transition-colors">
                     Click to Open <ArrowRight className="w-3 h-3" />
@@ -703,7 +675,7 @@ export default function PackagingSuiteSection() {
                   className="px-3.5 py-1.5 bg-[#4A152E] hover:bg-[#621d3e] text-white font-mono text-xs uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-1.5"
                 >
                   <X className="w-4 h-4" />
-                  <span>Back to 3-Asset Triad [ESC]</span>
+                  <span>Back to 3 Images [ESC]</span>
                 </button>
               </div>
             </div>
