@@ -476,46 +476,30 @@ export default function PackagingSuiteSection() {
               </div>
             </div>
 
-            {/* Instruction Banner */}
-            <div className="flex items-center justify-between py-2 px-3 bg-stone-900 border border-stone-800 my-3 text-[11px] font-mono text-stone-300 shrink-0">
-              <span className="text-pink-300 uppercase tracking-wider flex items-center gap-1.5">
-                <Layers className="w-3.5 h-3.5" />
-                <span>Showing All 3 Production Assets In Parallel</span>
-              </span>
-              <span className="text-stone-400 uppercase hidden sm:inline">
-                {selectedSku.volume} • Click Any Asset to Zoom
-              </span>
-            </div>
-
             {/* ============================================================== */}
             {/* 3-COLUMN SIDE-BY-SIDE ASSET TRIAD DISPLAY                      */}
             {/* ============================================================== */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 flex-1 overflow-y-auto pr-1 pb-2">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 flex-1 overflow-y-auto pr-1 my-3">
               {/* ------------------------------------------------------------ */}
-              {/* ASSET 01: FRONT PANEL / PRIMARY LABEL DIELINE               */}
+              {/* ASSET 01: MONOCARTON DIELINE                                */}
               {/* ------------------------------------------------------------ */}
               <div
                 onClick={() => setZoomAsset('front')}
                 className="bg-[#181818] border border-stone-800 p-3.5 flex flex-col justify-between group/panel hover:border-pink-500/60 transition-all cursor-pointer relative"
               >
-                <div>
-                  <div className="flex items-center justify-between pb-2 mb-2 border-b border-stone-800">
-                    <span className="font-mono text-[10px] text-pink-300 uppercase tracking-widest font-semibold flex items-center gap-1.5">
-                      <FileText className="w-3 h-3" />
-                      <span>Asset 01 // Primary Dieline</span>
-                    </span>
-                    <Maximize2 className="w-3.5 h-3.5 text-stone-500 group-hover/panel:text-pink-300 transition-colors" />
-                  </div>
-                  <h4 className="font-serif text-stone-200 text-sm mb-2">
-                    Front Panel & Container Wrap
-                  </h4>
+                <div className="flex items-center justify-between pb-2 mb-2 border-b border-stone-800">
+                  <span className="font-mono text-xs text-pink-300 uppercase tracking-wider font-medium flex items-center gap-2">
+                    <FileText className="w-3.5 h-3.5" />
+                    <span>1. Monocarton</span>
+                  </span>
+                  <Maximize2 className="w-3.5 h-3.5 text-stone-500 group-hover/panel:text-pink-300 transition-colors" />
                 </div>
 
-                <div className="bg-[#FAF9F6] p-3 my-2 flex items-center justify-center min-h-[240px] max-h-[320px] rounded-xs border border-stone-800 overflow-hidden relative">
+                <div className="bg-[#FAF9F6] p-3 my-2 flex items-center justify-center min-h-[260px] max-h-[360px] rounded-xs border border-stone-800 overflow-hidden relative">
                   <img
                     src={selectedSku.frontImage}
                     alt={`${selectedSku.title} Front Dieline`}
-                    className="max-w-full max-h-[240px] object-contain transition-transform duration-300 group-hover/panel:scale-105"
+                    className="max-w-full max-h-[260px] object-contain transition-transform duration-300 group-hover/panel:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/panel:opacity-100 transition-opacity flex items-center justify-center">
                     <span className="px-2.5 py-1 bg-stone-950/90 text-white font-mono text-[10px] uppercase tracking-wider flex items-center gap-1">
@@ -524,37 +508,41 @@ export default function PackagingSuiteSection() {
                     </span>
                   </div>
                 </div>
-
-                <div className="pt-2 border-t border-stone-800/80 font-mono text-[10px] text-stone-400">
-                  <span>Vector Spec: Label Artwork & Margins</span>
-                </div>
               </div>
 
               {/* ------------------------------------------------------------ */}
-              {/* ASSET 02: PHYSICAL STUDIO PRODUCT CAPTURE (CENTERPIECE)     */}
+              {/* ASSET 02: PRODUCT CAPTURE (CENTERPIECE)                     */}
               {/* ------------------------------------------------------------ */}
               <div
                 onClick={() => setZoomAsset('product')}
                 className="bg-[#181818] border-2 border-[#4A152E] p-3.5 flex flex-col justify-between group/panel hover:border-pink-400 transition-all cursor-pointer relative shadow-lg"
               >
-                <div>
-                  <div className="flex items-center justify-between pb-2 mb-2 border-b border-stone-800">
-                    <span className="font-mono text-[10px] text-pink-400 uppercase tracking-widest font-bold flex items-center gap-1.5">
-                      <Camera className="w-3 h-3 text-pink-400" />
-                      <span>Asset 02 // Physical Product</span>
-                    </span>
+                <div className="flex items-center justify-between pb-2 mb-2 border-b border-stone-800">
+                  <span className="font-mono text-xs text-pink-400 uppercase tracking-wider font-semibold flex items-center gap-2">
+                    <Camera className="w-3.5 h-3.5" />
+                    <span>2. Product Capture</span>
+                  </span>
+                  <div className="flex items-center gap-2">
+                    {selectedSku.productAltImage && (
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedAltAngle(!selectedAltAngle);
+                        }}
+                        className="px-2 py-0.5 bg-stone-800 hover:bg-[#4A152E] text-pink-300 font-mono text-[9px] uppercase tracking-wider border border-stone-700 cursor-pointer transition-colors"
+                      >
+                        {selectedAltAngle ? 'Primary' : 'Alt'}
+                      </button>
+                    )}
                     <Maximize2 className="w-3.5 h-3.5 text-pink-400 group-hover/panel:scale-110 transition-transform" />
                   </div>
-                  <h4 className="font-serif text-white text-sm mb-2">
-                    Studio Prototype Capture
-                  </h4>
                 </div>
 
-                <div className="bg-white p-3 my-2 flex items-center justify-center min-h-[240px] max-h-[320px] rounded-xs border border-stone-800 overflow-hidden relative">
+                <div className="bg-white p-3 my-2 flex items-center justify-center min-h-[260px] max-h-[360px] rounded-xs border border-stone-800 overflow-hidden relative">
                   <img
                     src={selectedAltAngle && selectedSku.productAltImage ? selectedSku.productAltImage : selectedSku.productImage}
                     alt={`${selectedSku.title} Product Capture`}
-                    className="max-w-full max-h-[240px] object-contain transition-transform duration-300 group-hover/panel:scale-105"
+                    className="max-w-full max-h-[260px] object-contain transition-transform duration-300 group-hover/panel:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/panel:opacity-100 transition-opacity flex items-center justify-center">
                     <span className="px-2.5 py-1 bg-[#4A152E] text-white font-mono text-[10px] uppercase tracking-wider flex items-center gap-1">
@@ -563,51 +551,28 @@ export default function PackagingSuiteSection() {
                     </span>
                   </div>
                 </div>
-
-                {/* Alternate Angle Switcher if Available */}
-                <div className="pt-2 border-t border-stone-800/80 flex items-center justify-between">
-                  <span className="font-mono text-[10px] text-stone-400 truncate max-w-[180px]">
-                    {selectedAltAngle && selectedSku.productAltLabel ? selectedSku.productAltLabel : selectedSku.productLabel}
-                  </span>
-                  {selectedSku.productAltImage && (
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelectedAltAngle(!selectedAltAngle);
-                      }}
-                      className="px-2 py-0.5 bg-stone-800 hover:bg-[#4A152E] text-pink-300 font-mono text-[9px] uppercase tracking-wider border border-stone-700 cursor-pointer shrink-0 transition-colors"
-                    >
-                      {selectedAltAngle ? 'View Primary' : 'Alt Angle'}
-                    </button>
-                  )}
-                </div>
               </div>
 
               {/* ------------------------------------------------------------ */}
-              {/* ASSET 03: STRUCTURAL BOX CARTON DIELINE                     */}
+              {/* ASSET 03: PRIMARY LABEL DIELINE                             */}
               {/* ------------------------------------------------------------ */}
               <div
                 onClick={() => setZoomAsset('box')}
                 className="bg-[#181818] border border-stone-800 p-3.5 flex flex-col justify-between group/panel hover:border-pink-500/60 transition-all cursor-pointer relative"
               >
-                <div>
-                  <div className="flex items-center justify-between pb-2 mb-2 border-b border-stone-800">
-                    <span className="font-mono text-[10px] text-pink-300 uppercase tracking-widest font-semibold flex items-center gap-1.5">
-                      <Box className="w-3 h-3" />
-                      <span>Asset 03 // Box Blueprint</span>
-                    </span>
-                    <Maximize2 className="w-3.5 h-3.5 text-stone-500 group-hover/panel:text-pink-300 transition-colors" />
-                  </div>
-                  <h4 className="font-serif text-stone-200 text-sm mb-2">
-                    Outer Folding Box Blueprint
-                  </h4>
+                <div className="flex items-center justify-between pb-2 mb-2 border-b border-stone-800">
+                  <span className="font-mono text-xs text-pink-300 uppercase tracking-wider font-medium flex items-center gap-2">
+                    <Box className="w-3.5 h-3.5" />
+                    <span>3. Primary Label</span>
+                  </span>
+                  <Maximize2 className="w-3.5 h-3.5 text-stone-500 group-hover/panel:text-pink-300 transition-colors" />
                 </div>
 
-                <div className="bg-[#FAF9F6] p-3 my-2 flex items-center justify-center min-h-[240px] max-h-[320px] rounded-xs border border-stone-800 overflow-hidden relative">
+                <div className="bg-[#FAF9F6] p-3 my-2 flex items-center justify-center min-h-[260px] max-h-[360px] rounded-xs border border-stone-800 overflow-hidden relative">
                   <img
                     src={selectedSku.backImage}
                     alt={`${selectedSku.title} Box Dieline`}
-                    className="max-w-full max-h-[240px] object-contain transition-transform duration-300 group-hover/panel:scale-105"
+                    className="max-w-full max-h-[260px] object-contain transition-transform duration-300 group-hover/panel:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/panel:opacity-100 transition-opacity flex items-center justify-center">
                     <span className="px-2.5 py-1 bg-stone-950/90 text-white font-mono text-[10px] uppercase tracking-wider flex items-center gap-1">
@@ -616,28 +581,6 @@ export default function PackagingSuiteSection() {
                     </span>
                   </div>
                 </div>
-
-                <div className="pt-2 border-t border-stone-800/80 font-mono text-[10px] text-stone-400">
-                  <span>Structural Blueprint: Flaps & Scoring</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Modal Bottom Metadata & Highlights */}
-            <div className="border-t border-stone-800 pt-3 mt-3 flex flex-col md:flex-row md:items-center justify-between gap-3 shrink-0">
-              <p className="text-xs font-sans text-stone-300 max-w-xl font-light leading-relaxed">
-                {selectedSku.desc}
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {selectedSku.highlights.map((h, idx) => (
-                  <span
-                    key={idx}
-                    className="px-2.5 py-1 bg-stone-900 border border-stone-800 text-pink-300 font-mono text-[10px] flex items-center gap-1"
-                  >
-                    <CheckCircle2 className="w-3 h-3 text-pink-400" />
-                    {h}
-                  </span>
-                ))}
               </div>
             </div>
           </div>
@@ -663,9 +606,9 @@ export default function PackagingSuiteSection() {
                   {selectedSku.title}
                 </span>
                 <h4 className="font-serif text-lg text-white">
-                  {zoomAsset === 'front' && '01. Front Panel & Container Wrap Dieline'}
-                  {zoomAsset === 'product' && (selectedAltAngle && selectedSku.productAltLabel ? selectedSku.productAltLabel : selectedSku.productLabel)}
-                  {zoomAsset === 'box' && '03. Outer Folding Box Dieline Blueprint'}
+                  {zoomAsset === 'front' && '1. Monocarton'}
+                  {zoomAsset === 'product' && '2. Product Capture'}
+                  {zoomAsset === 'box' && '3. Primary Label'}
                 </h4>
               </div>
 
@@ -707,7 +650,7 @@ export default function PackagingSuiteSection() {
                     : 'bg-stone-900 text-stone-400 hover:text-white'
                 }`}
               >
-                1. Front Dieline
+                1. Monocarton
               </button>
               <button
                 onClick={() => setZoomAsset('product')}
@@ -727,7 +670,7 @@ export default function PackagingSuiteSection() {
                     : 'bg-stone-900 text-stone-400 hover:text-white'
                 }`}
               >
-                3. Box Blueprint
+                3. Primary Label
               </button>
             </div>
           </div>
