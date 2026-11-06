@@ -162,7 +162,7 @@ export default function HeroSection() {
 
             {/* Dynamic Metric Dashboard Grid */}
             <div className="grid grid-cols-2 gap-2.5 pt-1">
-              <StatCounter target={11} label="Packaging SKUs" isInView={isInView} />
+              <StatCounter target={11} label="Product Packaging" isInView={isInView} />
               <StatCounter target={1} label="Brand Identity" isInView={isInView} />
               <StatCounter target={100} suffix="%" label="Design Ownership" isInView={isInView} />
               <StatCounter target={5} label="Website & Social Media Assets" isInView={isInView} />

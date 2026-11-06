@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Maximize2, Sparkles } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 import moodboard from '../assets/moodboard.jpeg';
@@ -20,7 +20,7 @@ export default function BrainstormSection() {
           <img
             src={logoImg}
             alt="CAMEÓLA Brand Logo"
-            className="h-20 w-auto object-contain"
+            className="w-full max-w-sm h-auto object-contain"
           />
         </div>
 
@@ -53,7 +53,7 @@ export default function BrainstormSection() {
           <img
             src={moodboard}
             alt="Brand Mood Board — CAMEÓLA Paris"
-            className="w-full h-auto max-h-[680px] object-contain mx-auto transition-transform duration-700 ease-out group-hover:scale-[1.01]"
+            className="w-full h-auto max-h-[860px] object-contain mx-auto transition-transform duration-700 ease-out group-hover:scale-[1.01]"
           />
           <div className="absolute inset-0 bg-stone-950/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
             <div className="flex items-center gap-2 px-4 py-2 bg-white text-stone-950 font-mono text-xs uppercase tracking-wider shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
