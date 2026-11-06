@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Maximize2, Sparkles } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 import moodboard from '../assets/moodboard.jpeg';
+import logoImg from '../assets/logo.jpg';
 
 export default function BrainstormSection() {
   const [lightboxImage, setLightboxImage] = useState(null);
@@ -14,35 +15,13 @@ export default function BrainstormSection() {
       className="relative py-24 bg-[#F7F6F3] border-b border-[#E2DFD7] scroll-mt-20 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        {/* Section Header */}
-        <div className={`flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 pb-8 border-b border-[#E2DFD7] reveal-fade-up ${isInView ? 'is-revealed' : ''}`}>
-          <div className="space-y-3">
-            <span className="font-mono text-xs text-[#4A152E] uppercase tracking-widest font-semibold block">
-              03. VISUAL IDENTITY &amp; BRAND MOOD BOARD
-            </span>
-            <div className="inline-flex flex-col items-start select-none group cursor-default">
-              <h2 className="font-serif text-4xl sm:text-6xl text-stone-950 tracking-wider uppercase font-semibold leading-none group-hover:text-[#4A152E] transition-colors duration-300">
-                CAMEÓLA
-              </h2>
-            </div>
-            <p className="text-xs font-mono text-stone-500 uppercase tracking-widest pt-1">
-              CUSTOM WORDMARK // LUXURY SKINCARE IDENTITY
-            </p>
-          </div>
-
-          <div className="flex items-center gap-3 bg-white px-5 py-3 border border-[#E2DFD7] shadow-2xs hover:border-[#4A152E]/30 hover:-translate-y-0.5 transition-all duration-300">
-            <div className="w-9 h-9 bg-[#4A152E] text-pink-100 flex items-center justify-center font-serif text-base font-bold shadow-2xs">
-              C
-            </div>
-            <div className="text-left">
-              <span className="font-mono text-[10px] text-stone-400 uppercase tracking-wider block">
-                [C] BRAND MONOGRAM
-              </span>
-              <span className="font-mono text-xs text-stone-800 font-medium">
-                VISUAL IDENTITY
-              </span>
-            </div>
-          </div>
+        {/* Section Header — Brand Logo */}
+        <div className={`mb-16 pb-8 border-b border-[#E2DFD7] reveal-fade-up ${isInView ? 'is-revealed' : ''}`}>
+          <img
+            src={logoImg}
+            alt="CAMEÓLA Brand Logo"
+            className="h-20 w-auto object-contain"
+          />
         </div>
 
         {/* Moodboard Header */}
@@ -55,15 +34,14 @@ export default function BrainstormSection() {
               </span>
             </div>
             <h3 className="font-serif text-2xl sm:text-3xl text-stone-950 font-normal">
-              Understated Luxury
-            </h3>
+              Brand Moodboard</h3>
           </div>
           <button
             onClick={() => setLightboxImage(moodboard)}
             className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#4A152E] text-white text-xs font-mono uppercase tracking-wider hover:bg-[#381023] hover:shadow-xs hover:-translate-y-0.5 transition-all duration-200 cursor-pointer self-start sm:self-center"
           >
             <Maximize2 className="w-3.5 h-3.5" />
-            <span>Inspect Full Mood Board</span>
+            <span>Inspect Img</span>
           </button>
         </div>
 
@@ -80,7 +58,7 @@ export default function BrainstormSection() {
           <div className="absolute inset-0 bg-stone-950/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
             <div className="flex items-center gap-2 px-4 py-2 bg-white text-stone-950 font-mono text-xs uppercase tracking-wider shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
               <Maximize2 className="w-4 h-4 text-[#4A152E]" />
-              <span>Expand Full-Res Mood Board</span>
+              <span>Expand Img</span>
             </div>
           </div>
         </div>
