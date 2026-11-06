@@ -83,6 +83,11 @@ import mistSpray2 from '../assets/WhatsApp Image 2026-09-22 at 11.57.50 (1).jpeg
 import luxeSolairePhoto1 from '../assets/WhatsApp Image 2026-09-22 at 11.57.52.jpeg';
 import luxeSolairePhoto2 from '../assets/WhatsApp Image 2026-09-22 at 11.57.52 (1).jpeg';
 
+// Physical 3D Prototype Captures (Cropped & Fitted)
+import sublimeCreamPhoto from '../assets/sublime-cream-prototype.jpg';
+import persianGlowPhoto from '../assets/parisian-glow-prototype.jpg';
+import radianceRevealedPhoto from '../assets/radiance-revealed-prototype.jpg';
+
 // ==========================================
 // 3. MASTER PACKAGING SKU CATALOGUE (EXACT 1-TO-1 MAPPING)
 // ==========================================
@@ -184,11 +189,10 @@ const PACKAGING_SKUS = [
     volume: '50ml / 1.7 fl oz',
     substrate: 'Heavy Base Jar + Suspension Carton',
     frontImage: sublimeCreamP1,
-    productImage: sublimeCreamP2,
+    productImage: sublimeCreamPhoto,
     productAltImage: null,
     backImage: sublimeCreamP2,
-    isDielineOnly: true,
-    productLabel: 'Technical Blueprint: 50ml Primary Container Bottle Wrap Dieline',
+    productLabel: 'Studio Capture: Heavy Base Jar & Virgin Folding Carton',
     productAltLabel: null,
     desc: 'Ultra-nourishing overnight lipid cream formulated for barrier repair. Protected by a high-caliper virgin folding carton with friction-fit retaining collar.',
     highlights: ['50ml / 1.7 fl oz', 'Heavy Base Jar + Suspension Carton', 'Overnight Lipid Barrier Repair', 'High-Caliper Virgin Folding Carton'],
@@ -200,11 +204,11 @@ const PACKAGING_SKUS = [
     volume: '100ml / 3.4 fl oz',
     substrate: 'Dispenser Pump Bottle + Outer Carton',
     frontImage: persianGlowP1,
-    productImage: '/assets/cameola-mockup.jpg',
-    productAltImage: '/assets/cameola-bottle-label.png',
+    productImage: persianGlowPhoto,
+    productAltImage: null,
     backImage: persianGlowP2,
-    productLabel: 'Studio Mockup: 100ml Pump Dispenser Bottle & Burgundy Folding Carton',
-    productAltLabel: 'Primary Blueprint: High-Resolution Bottle Label Vector Wrap',
+    productLabel: 'Studio Capture: 100ml Pump Dispenser Bottle & Burgundy Folding Carton',
+    productAltLabel: null,
     desc: 'Gentle gel-to-foam botanical cleanser with brightening damask rose and camellia saponins. Engineered in a 100ml airless pump cylinder.',
     highlights: ['100ml / 3.4 fl oz', 'Dispenser Pump Bottle + Outer Carton', 'Brightening Damask Rose', 'Airless Pump Cylinder'],
   },
@@ -215,11 +219,10 @@ const PACKAGING_SKUS = [
     volume: '100ml / 3.4 fl oz',
     substrate: 'Cylindrical Bottle + Locking Folded Shell',
     frontImage: radianceRevealedP1,
-    productImage: radianceRevealedP2,
+    productImage: radianceRevealedPhoto,
     productAltImage: null,
     backImage: radianceRevealedP2,
-    isDielineOnly: true,
-    productLabel: 'Technical Blueprint: 100ml Primary Bottle Wrap Dieline',
+    productLabel: 'Studio Capture: Cylindrical Bottle & Locking Folded Shell',
     productAltLabel: null,
     desc: 'Deep-pore clarifying cleanse without stripping natural lipids. Features an ergonomic ribbed cap and tamper-evident pull-tab seal.',
     highlights: ['100ml / 3.4 fl oz', 'Cylindrical Bottle + Locking Folded Shell', 'Deep-Pore Clarifying Cleanse', 'Ergonomic Ribbed Cap & Tamper Seal'],

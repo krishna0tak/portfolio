@@ -15,13 +15,19 @@ export default function BrainstormSection() {
       className="relative py-24 bg-[#F7F6F3] border-b border-[#E2DFD7] scroll-mt-20 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        {/* Section Header — Brand Logo */}
+        {/* Section Header */}
         <div className={`mb-16 pb-8 border-b border-[#E2DFD7] reveal-fade-up ${isInView ? 'is-revealed' : ''}`}>
+          <span className="font-mono text-xs text-[#4A152E] uppercase tracking-widest font-semibold block mb-6">
+            03. VISUAL IDENTITY &amp; BRAND MOOD BOARD
+          </span>
           <img
             src={logoImg}
             alt="CAMEÓLA Brand Logo"
-            className="w-full max-w-sm h-auto object-contain"
+            className="w-auto max-w-[280px] sm:max-w-xs h-auto object-contain"
           />
+          <p className="text-xs font-mono text-stone-500 uppercase tracking-widest mt-4">
+            CUSTOM WORDMARK // LUXURY SKINCARE IDENTITY
+          </p>
         </div>
 
         {/* Moodboard Header */}
